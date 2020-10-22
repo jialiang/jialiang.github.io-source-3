@@ -25,10 +25,13 @@ const compileHTML = () =>
     .pipe(
       ejs({
         md: (str) =>
-          marked(str).replace(
-            /<a href="http/gi,
-            '<a target="_blank" rel="noreferrer noopener" href="http'
-          ),
+          marked(str)
+            .replace(
+              /<a href="http/gi,
+              '<a target="_blank" rel="noreferrer noopener" href="http'
+            )
+            .replace(/align="left"/gi, 'class="text-left"')
+            .replace(/align="right"/gi, 'class="text-right"'),
       })
     )
     .pipe(

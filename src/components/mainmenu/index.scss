@@ -53,11 +53,14 @@ section.mainmenu {
   }
 
   .logo {
+    font-size: 1vh;
     position: relative;
+    overflow: hidden;
     width: 95vmin;
     height: 67%;
     margin: auto;
     margin: auto;
+    white-space: nowrap;
     background: inline-svg("logo") 50% 50%/100% auto no-repeat;
   }
 
