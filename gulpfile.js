@@ -7,6 +7,7 @@ const fs = require("fs");
 const inlineBase64 = require("gulp-inline-base64");
 const prettier = require("gulp-prettier");
 const rename = require("gulp-rename");
+const removeHtmlComments = require("gulp-remove-html-comments");
 const sass = require("gulp-sass");
 const sassInlineSvg = require("gulp-sass-inline-svg");
 const size = require("gulp-size");
@@ -36,6 +37,7 @@ const compileHTML = () =>
         extname: ".html",
       }))
     )
+    .pipe(removeHtmlComments())
     .pipe(dest("dist"));
 
 const compileCSS = () =>
