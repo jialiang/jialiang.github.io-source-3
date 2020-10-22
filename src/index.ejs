@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jia Liang | Software Engineer</title>
+    <style>
+      @font-face {
+        font-family: "Atkinson";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+          url("Atkinson-Hyperlegible-Regular-102.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Atkinson";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
+          url("Atkinson-Hyperlegible-Bold-102.woff") format("woff");
+      }
+    </style>
+    <link rel="stylesheet" href="index.css" data-embed />
+  </head>
+  <body>
+    <div class="sub-body">
+      <%- include("components/about/index") %>
+      <!--  -->
+      <%- include("components/work/index") %>
+      <!--  -->
+      <%- include("components/thanks/index") %>
+      <!--  -->
+      <%- include("components/website/index") %>
+      <!--  -->
+      <%- include("components/construction/index") %>
+      <!--  -->
+      <%- include("components/mainmenu/index") %>
+      <!--  -->
+      <%- include("components/transition/index") %>
+      <!--  -->
+      <script>
+        var d = document;
+        [].forEach.call(d.querySelectorAll("section"), function (section) {
+          console.log(location.hash);
+          if ("#" + section.id === location.hash) {
+            d.body.className = "skip-intro";
+            section.focus();
+          }
+        });
+      </script>
+      <div class="vignette" role="presentation"></div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="cover"
+        viewbox="0 0 1706.667 960"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 124.2c206.25-47.977 424.076-63.795 642.053-79.196l50.205 14.142 451.84-19.092c178.004 4.59 346.625-5.83 562.545 59.428L1706.666 0H0zM1706.68 839.735L271 917 0 807.062V960h1706.667z"
+        ></path>
+      </svg>
+
+      <a class="button back to-mainmenu" href="#" title="Go back to Main menu"
+        >BACK</a
+      >
+      <a
+        class="button back to-work"
+        href="#work"
+        title="Go back to Work section"
+        >BACK</a
+      >
+    </div>
+  </body>
+</html>

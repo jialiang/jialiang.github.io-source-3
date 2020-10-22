@@ -1,0 +1,42 @@
+{
+  "name": "jialiang.github.io-source-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jia Liang",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cssbrush": "^0.6.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ejs": "^5.1.0",
+    "gulp-embed": "^1.1.1",
+    "gulp-inline-base64": "^0.1.5",
+    "gulp-prettier": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-inline-svg": "^1.0.3",
+    "gulp-size": "^3.0.0",
+    "gulp-watch": "^5.0.1",
+    "http-server": "^0.12.3",
+    "marked": "^1.2.0",
+    "merge-stream": "^2.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "IE 11",
+    "last 2 Opera versions",
+    "last 2 Safari versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 FirefoxAndroid versions",
+    "last 1 OperaMobile versions",
+    "last 2 iOS versions"
+  ]
+}

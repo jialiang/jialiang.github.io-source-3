@@ -1,0 +1,88 @@
+section {
+  display: none;
+}
+
+section.mainmenu {
+  display: block;
+
+  .logo,
+  .nav a {
+    transition: 0.5s opacity;
+    opacity: 1;
+  }
+}
+
+.text-container {
+  animation: 0.5s fade-in 0.4s both;
+}
+
+.back {
+  visibility: hidden;
+}
+
+.darken {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+section:target {
+  display: block;
+
+  ~ section.mainmenu {
+    .glow {
+      animation-play-state: paused;
+    }
+
+    .leaf {
+      visibility: hidden;
+    }
+
+    .logo,
+    .nav a {
+      visibility: hidden;
+      transition: none;
+      opacity: 0;
+    }
+
+    .intro-0,
+    .intro-0 .inner,
+    .intro-1,
+    .intro-1 .circle,
+    .intro-2 .reveal {
+      visibility: hidden;
+    }
+  }
+
+  ~ .to-mainmenu {
+    visibility: visible;
+  }
+
+  &.article {
+    ~ .darken {
+      transition: 0.3s opacity 0.1s;
+      opacity: 1;
+    }
+
+    ~ .to-mainmenu {
+      visibility: hidden;
+    }
+
+    ~ .to-work {
+      visibility: visible;
+    }
+  }
+}
+
+@media (-ms-high-contrast: none) and (min-width: 499px),
+  (-ms-high-contrast: active) and (min-width: 499px) {
+  .sub-body div[class$="-filter"] {
+    opacity: 0.5;
+  }
+}

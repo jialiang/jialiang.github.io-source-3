@@ -1,0 +1,238 @@
+@import "sass-inline-svg.scss";
+
+section.mainmenu {
+  z-index: 1;
+  overflow-y: hidden;
+  background: #22182b linear-gradient(black, rgba(0, 0, 0, 0), #140f18 55%);
+
+  .room {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inline-svg("bg") 0 0 / auto 100% no-repeat;
+  }
+
+  .glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: 0.2s flicker linear infinite;
+    background: inline-svg("glow") 0 0 / auto 100% no-repeat;
+  }
+
+  .paper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background: inline-svg("paper") 0 0 / auto 100% no-repeat;
+  }
+
+  .leaf-container {
+    .leaf {
+      position: absolute;
+      width: 5vmin;
+      height: 5vmin;
+      background: inline-svg("leaf") 50% 50%/100% 100% no-repeat;
+    }
+  }
+
+  .dust {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/asfalt-light.png");
+  }
+
+  .logo {
+    position: relative;
+    width: 95vmin;
+    height: 67%;
+    margin: auto;
+    margin: auto;
+    background: inline-svg("logo") 50% 50%/100% auto no-repeat;
+  }
+
+  .nav {
+    font-size: 4.5vmin;
+    position: absolute;
+    bottom: 10.5vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    span {
+      position: relative;
+    }
+
+    .button {
+      margin: 1vh 1em;
+    }
+
+    .thanks {
+      font-size: 0.67em;
+      display: inline-block;
+      margin-top: 10vh;
+      box-shadow: 0 4px 4px -4px black, 0 4px 4px -4px black;
+      text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    }
+  }
+
+  .intro-1,
+  .intro-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .intro-0 {
+    font-size: 5vh;
+    font-weight: bold;
+    line-height: 10vh;
+    position: absolute;
+    top: 45vh;
+    right: 0;
+    left: 0;
+    width: 67%;
+    height: 10vh;
+    margin: auto;
+    transform-origin: right;
+    animation: 0.39s shrink-x 0.6s both;
+    text-align: center;
+    color: white;
+    border: 4px solid white;
+
+    .inner {
+      position: absolute;
+      top: 1vh;
+      left: 1vh;
+      width: calc(100% - 2vh);
+      height: calc(100% - 2vh);
+      transform-origin: left;
+      animation: 0.39s expand-x 0.2s linear both;
+      text-align: center;
+      color: white;
+      background: white;
+    }
+  }
+
+  .intro-1 {
+    animation: 0s fade-out 1.9s both;
+    background: #d1a12e;
+
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: 0.29s expand both;
+
+      &:nth-child(1) {
+        animation-delay: 1.15s;
+        background: #d1542e;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1.3s;
+        background: #2ed1b4;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.45s;
+        background: #542ed1;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 1.6s;
+        background: #d1a12e;
+      }
+    }
+  }
+
+  .intro-2 {
+    .reveal {
+      position: absolute;
+      background: #d1a12e;
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        transform-origin: top;
+        animation: 0.3s shrink-y 1.9s both;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        transform-origin: right;
+        animation: 0.3s shrink-x 1.9s both;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        transform-origin: bottom;
+        animation: 0.3s shrink-y 1.9s both;
+      }
+
+      &:nth-child(4) {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        transform-origin: left;
+        animation: 0.3s shrink-x 1.9s both;
+      }
+    }
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .room {
+      background-attachment: fixed;
+    }
+
+    .glow {
+      background-attachment: fixed;
+    }
+  }
+
+  @media (max-width: 600px), (max-height: 600px) {
+    .nav {
+      font-size: 27px;
+    }
+  }
+
+  @media (max-width: 390px), (max-height: 390px) {
+    .nav {
+      font-size: 5.9vmin;
+    }
+  }
+}
+
+.skip-intro section.mainmenu {
+  .intro-0,
+  .intro-0 .inner,
+  .intro-1,
+  .intro-1 .circle,
+  .intro-2 .reveal {
+    visibility: hidden;
+  }
+}

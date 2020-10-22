@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80.86" height="85.522">
+  <defs>
+    <radialGradient xlink:href="#a" id="b" cx="467.479" cy="791.888" fx="467.479" fy="791.888" r="40.43" gradientTransform="matrix(1 0 0 1.05766 -427.05 -794.785)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#f70012"/>
+      <stop offset="1" stop-color="#97020f"/>
+    </linearGradient>
+    <filter id="c" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2 2" result="blur"/>
+    </filter>
+  </defs>
+  <path d="M22.35 35.22C7.656 23.282 3.848 11.332 2.22 0c7.683 11.117 14.503 22.367 29.921 28.525l17.57-20.57 31.149 7.114c-4.316 11.123-11.19 19.688-20.649 25.67 6.251 12.81 8.27 25.293 6.643 37.497-12.34-1.5-24.594-3.139-32.784-11.356C25.66 76.374 14.763 82.88.643 85.522L0 50.595z" fill="url(#b)" stroke="#000" stroke-width="2" filter="url(#c)"/>
+</svg>

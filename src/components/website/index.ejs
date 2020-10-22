@@ -1,0 +1,96 @@
+<!-- prettier-ignore -->
+<section id="website" class="article" role="dialog" tabindex="0">
+  <div class="text-container">
+    <%- md(`
+# <span>My Personal</span><br aria-hidden="true" /><span>Website</span>
+
+<small>*Written on 30 Nov 2020*</small>
+
+[Github repository](https://github.com/jialiang/jialiang.github.io-source-3)
+
+---
+
+## Intro
+
+This is the 3rd iteration of my personal website as part of my yearly website refresh.
+This time around, the design is inspired by:
+
+- The opening of the 3rd arc of the Owarimonogatari tv series.
+- The [opening of the 1st Persona 2 game](https://www.youtube.com/watch?v=N-KjFyhWQs8).
+- The UI of the Persona 5 game.
+- [The Cowardly Witch's website](https://yui540.graphics/).
+
+## Tech Stack
+
+[EJS](https://ejs.co/) & [Markdown](https://daringfireball.net/projects/markdown/) is used for layout & content.
+Sass is used for styling.
+
+JavaScript libraries powered by [NodeJS](https://nodejs.org/en/) are used to compile source code & optimize assets.
+[Gulp](https://gulpjs.com/) is used to manage the aforementioned build process.
+
+## Performance
+
+The entire website inclusive of all resources for a 1080p screen has a transfer size of only 442kB, of which:
+
+Type   | Approx. Size
+:---   | ---:
+JPG    | 292kB (66%)
+SVG    | 84kB (19%)
+WOFF2  | 32kB (7%)
+PNG    | 22kB (5%)
+CSS    | 7kB (2%)
+HTML   | 4kB (1%)
+JS     | 148 Bytes
+
+For comparison, the [Google homepage](https://www.google.com/) trasfers a total of 390kB on the same device.
+
+
+During rendering performance testing, the website is able to both play animations & scroll smoothly on an 2016 Asus Zenfone 3 & 2015 Macbook Pro.
+The test is done in Firefox & Chrome for the former and Safari for the latter.
+
+This website has a Lighthose score of 98/100 in the Performance category.
+
+## Compatibility
+
+This website is compatible with:
+
+- Firefox
+- Chrome
+- Edge
+- Safari
+- Internet Explorer 11
+
+It also functions with JavaScript disabled with hardly any degradation.
+
+This website supports screens of:
+
+- Size as small as [240 × 320](https://en.wikipedia.org/wiki/Graphics_display_resolution#320_%C3%97_240_(QVGA)).
+- Aspect-ratio as wide as [21:9](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones).
+- Aspect-ratio as tall as [9:21](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones).
+- Device pixel ratio as high as 3.
+
+## Accessibility
+
+This website has the following accessibility features:
+
+- Keyboard-friendly.
+- [NVDA screen reader](https://www.nvaccess.org/about-nvda/) friendly.
+- Has text contrast ratio of 4.5:1 and above.
+- Support text zoom level up to 200%.
+- [Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont) font for low-vision readers.
+- Valid HTML & CSS verified by the [W3C Markup Validation Service](https://validator.w3.org/).
+
+This website has a Lighthouse score of 100/100 in the Accessibility category.
+
+## Privacy
+
+This website does not collect any information about you at all.
+
+Zip, zilch, nada. No trackers, no analytics.
+
+---
+
+<small>*Information presented here is true at the time of writing*</small>
+    `) %>
+  </div>
+</section>

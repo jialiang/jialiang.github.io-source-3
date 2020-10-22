@@ -1,0 +1,67 @@
+@import "sass-inline-svg.scss";
+
+.work-filter {
+  transform: scale(0);
+  pointer-events: none;
+  background: radial-gradient(#0980ff, #88e7d5, #6161b5);
+
+  mix-blend-mode: hard-light;
+
+  @media (max-width: 550px) {
+    background: radial-gradient(
+    rgba(9, 128, 255, 0.5),
+    #00ffcf,
+    rgba(97, 97, 181, 0.5)
+    );
+
+    mix-blend-mode: normal;
+  }
+}
+
+.work-decorations {
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+
+  .fish-1,
+  .fish-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    transform: scale(0);
+    transform-origin: bottom left;
+    background: inline-svg("fish") 0 0 / auto 100% no-repeat;
+  }
+
+  .fish-2 {
+    right: 0;
+    bottom: 350px;
+    left: auto;
+    transform: rotateZ(90deg) scale(0);
+
+    @media (max-width: 750px) {
+      display: none;
+    }
+  }
+}
+
+#work:target {
+  ~ .work-filter {
+    transition: 0.3s transform 0.1s;
+    transform: scale(1);
+  }
+
+  ~ .work-decorations {
+    .fish-1 {
+      transition: 0.25s transform 0.3s;
+      transform: scale(1);
+    }
+
+    .fish-2 {
+      transition: 0.25s transform 0.45s;
+      transform: rotateZ(90deg) scale(1);
+    }
+  }
+}

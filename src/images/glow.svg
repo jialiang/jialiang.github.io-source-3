@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1706.667" height="960">
+  <defs>
+    <filter id="l" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="p" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="n" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="d" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="f" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="h" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="j" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+    <filter id="b" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5 5" result="blur"/>
+    </filter>
+  </defs>
+  <use xlink:href="#a" transform="matrix(1.2 0 0 1.2 -114.105 -41.038)" width="100%" height="100%" filter="url(#b)"/>
+  <path id="a" d="M602.334 133.514h-31.808V276.87h31.808c31.99-47.672 32.536-95.628 0-143.356zm-63.615 0h31.807V276.87H538.72c-31.99-47.672-32.536-95.628 0-143.356z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="9.21" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#c" transform="matrix(1.2 0 0 1.2 -43.161 -86.142)" width="100%" height="100%" filter="url(#d)"/>
+  <path id="c" d="M230.757 397.02h-14.95v67.383h14.95c15.037-22.407 15.293-44.948 0-67.382zm-29.9 0h14.95v67.383h-14.95c-15.037-22.407-15.294-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#e" transform="matrix(1.2 0 0 1.2 -13.048 -69.472)" width="100%" height="100%" filter="url(#f)"/>
+  <path id="e" d="M80.19 313.667H65.24v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382H50.29c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#g" transform="matrix(1.2 0 0 1.2 -54.248 -17.272)" width="100%" height="100%" filter="url(#h)"/>
+  <path id="g" d="M286.19 52.667h-14.95v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382h-14.95c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#i" transform="matrix(1.2 0 0 1.2 -78.448 -50.272)" width="100%" height="100%" filter="url(#j)"/>
+  <path id="i" d="M407.19 217.667h-14.95v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382h-14.95c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#k" transform="matrix(1.2 0 0 1.2 -207.248 -33.672)" width="100%" height="100%" filter="url(#l)"/>
+  <path id="k" d="M1051.19 134.667h-14.95v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382h-14.95c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#m" transform="matrix(1.2 0 0 1.2 -240.448 -89.472)" width="100%" height="100%" filter="url(#n)"/>
+  <path id="m" d="M1217.19 413.667h-14.95v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382h-14.95c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+  <use xlink:href="#o" transform="matrix(1.2 0 0 1.2 -278.848 -44.872)" width="100%" height="100%" filter="url(#p)"/>
+  <path id="o" d="M1409.19 190.667h-14.95v67.382h14.95c15.036-22.407 15.293-44.948 0-67.382zm-29.901 0h14.95v67.382h-14.95c-15.036-22.407-15.293-44.948 0-67.382z" display="inline" fill="#fbc684" fill-opacity="1" stroke="none" stroke-width="4.329" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"/>
+</svg>

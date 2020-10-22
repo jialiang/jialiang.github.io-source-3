@@ -1,0 +1,95 @@
+@import "sass-inline-svg.scss";
+
+#thanks {
+  h1 {
+    position: relative;
+    z-index: 2;
+
+    span {
+      padding-right: 0.75em;
+    }
+  }
+
+  .star {
+    position: absolute;
+    top: -1em;
+    right: -1.25em;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    background: url("images/star.png") 0 0/100% 100% no-repeat;
+  }
+}
+
+.thanks-filter {
+  transform: scale(0);
+  pointer-events: none;
+  background: inline-svg("radial") 50% 50%/100% auto,
+  radial-gradient(gold, goldenrod);
+
+  mix-blend-mode: hard-light;
+
+  @media (max-width: 550px) {
+    background-image: inline-svg("radial-solid"),
+    radial-gradient(gold, rgba(218, 165, 32, 0.5));
+
+    mix-blend-mode: normal;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    background-size: auto 100%;
+  }
+}
+
+#thanks:target {
+  h1 {
+    animation: 0.25s shake 0.55s both;
+  }
+
+  .star {
+    animation: 0.24s star-fade-in 0.3s ease-in both;
+  }
+
+  ~ .thanks-filter {
+    transition: 0.3s transform 0.1s;
+    transform: scale(1);
+  }
+}
+
+@keyframes star-fade-in {
+  0% {
+    transform: scale(10) rotateZ(14deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateZ(14deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotateZ(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotateZ(-1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotateZ(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotateZ(1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotateZ(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotateZ(-1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotateZ(-1deg);
+  }
+}

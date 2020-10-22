@@ -1,0 +1,289 @@
+@import "sass-inline-svg.scss";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: black;
+
+  @media (max-width: 310px) {
+    font-size: 12px;
+  }
+}
+
+.sub-body {
+  font-family: "Atkinson", sans-serif;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  width: calc(100vh * 16 / 9);
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
+  letter-spacing: 0.5px;
+
+  > section,
+  > div,
+  > svg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  > section {
+    z-index: 2;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-left: 2px solid rgba(0, 0, 0, 0);
+
+    &:focus {
+      box-sizing: border-box;
+      border-left-color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-aspect-ratio: 1 / 1) {
+      border-left: none !important;
+    }
+  }
+
+  .vignette,
+  .cover {
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .vignette {
+    background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.25),
+    transparent,
+    transparent,
+    rgba(0, 0, 0, 0.25)
+    );
+  }
+
+  .back {
+    font-size: 1.35em;
+    position: absolute;
+    z-index: 2;
+    right: 1vh;
+    bottom: 1vh;
+    transform: rotateZ(-3deg);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: cyan;
+  border-bottom: 2px solid;
+
+  &:hover,
+  &:focus {
+    color: yellow;
+    border-bottom-style: dotted;
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &::selection {
+    color: white;
+    background: #0078d7;
+    text-shadow: none;
+  }
+}
+
+.button {
+  font-weight: bold;
+  line-height: 2em;
+  display: inline-block;
+  width: 5em;
+  height: 2.25em;
+  margin: 1em 0;
+  text-align: center;
+  vertical-align: bottom;
+  color: black;
+  border-bottom: none;
+  border-radius: 0.5em;
+  background: white;
+  box-shadow: inset 0 -0.25em 1px 1px rgba(204, 198, 197, 0.5), 0 0 2px white;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+  &:hover,
+  &:focus {
+    color: black;
+    border-bottom: 2px solid #e4e063;
+    background: linear-gradient(goldenrod, yellow);
+  }
+}
+
+.text-container {
+  font-size: 1.35em;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 25.5em;
+  min-height: 100%;
+  margin: auto;
+  padding: 10vh 1em 20vh 1em;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3vh black;
+
+  h1 {
+    font-size: 2em;
+    display: inline-block;
+    margin-bottom: 0;
+
+    span {
+      font-weight: bold;
+      overflow: hidden;
+      padding: 0.1em 0.25em;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: black;
+      background: white;
+    }
+  }
+
+  h2,
+  p,
+  li,
+  th,
+  td {
+    line-height: 1.5;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+
+    a {
+      box-shadow: 0 4px 4px -4px black, 0 4px 4px -4px black;
+    }
+  }
+
+  h2 {
+    font-size: 2em;
+    overflow: hidden;
+    margin: 1.5em 0 -0.35em 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+
+  ul {
+    padding-left: 1em;
+
+    li {
+      margin-bottom: 0.25em;
+      list-style-type: square;
+    }
+  }
+
+  p,
+  li,
+  strong,
+  em {
+    &::selection {
+      color: white;
+      background: #0078d7;
+      text-shadow: none;
+    }
+  }
+
+  table {
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    th {
+      color: black;
+      background: white;
+      text-shadow: none;
+    }
+
+    th,
+    td {
+      padding: 0.15em 0.5em;
+    }
+  }
+
+  a {
+    figure {
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 10em;
+      margin: 2em 0 3em 0;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 4px;
+      background: black;
+      box-shadow: 0 0 8px black;
+
+      svg {
+        width: 100%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0.5em;
+        text-align: right;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 2.5em black inset;
+        text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+
+        .title {
+          font-size: 1.2em;
+          font-weight: bold;
+          text-align: left;
+          color: white;
+        }
+
+        .action {
+          font-size: 0.8em;
+          line-height: 1.1;
+          display: inline-block;
+          border-bottom: 2px solid;
+          box-shadow: 0 4px 4px -4px black, 0 4px 4px -4px black;
+        }
+
+        &::selection {
+          text-shadow: none;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      figure {
+        border-style: dotted;
+        border-color: yellow;
+      }
+    }
+  }
+}
+
+.article {
+  .text-container {
+    background: none;
+    box-shadow: none;
+  }
+}
