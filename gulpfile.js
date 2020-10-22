@@ -82,7 +82,9 @@ const reportHTMLSize = () =>
     .pipe(size({ title: "Gzipped", gzip: true, showFiles: true }));
 
 const copyStatic = () => {
-  const stream1 = src("./src/images/*.{jpg,png}").pipe(dest("./dist/images"));
+  const stream1 = src("./src/images/*.{jpg,png,webp}").pipe(
+    dest("./dist/images")
+  );
   const stream2 = src("./src/static/*").pipe(dest("./dist"));
 
   return merge(stream1, stream2);
@@ -101,13 +103,13 @@ task("build", build);
 
 task("report-production-size", () => {
   const options = {
-    JPG: "./dist/images/*-780.jpg",
+    WEBP: "./dist/images/*-780.webp",
     SVG: "./src/images/*.svg",
     WOFF2: "./dist/*.woff2",
     PNG: "./dist/images/*.png",
     CSS: "./dist/*.css",
     HTML: "./dist/*.html",
-    TOTAL: ["./dist/**/*.{html,woff2}", "./dist/**/*-780.jpg"],
+    TOTAL: ["./dist/**/*.{html,woff2}", "./dist/**/*-780.webp"],
   };
   const results = {};
   const task = Object.keys(options).map((key) => {

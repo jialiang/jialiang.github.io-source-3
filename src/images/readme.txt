@@ -1,0 +1,1 @@
+Install graphics-magick to use generate-images.bat
