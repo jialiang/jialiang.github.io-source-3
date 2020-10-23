@@ -1,0 +1,63 @@
+<!-- prettier-ignore -->
+<section id="matrix" class="article" role="dialog" tabindex="0">
+  <div class="text-container">
+    <%- md(`
+# <span>Pure CSS</span><br aria-hidden="true" /><span>Digital Rain</span>
+
+<small>*Written on 30 Nov 2020*</small>
+
+[Github repository](https://github.com/jialiang/matrix-digital-rain)
+[Link to Demo](https://jialiang.github.io/matrix-digital-rain)
+
+⚠️ High CPU/GPU usage in demo.
+
+---
+
+## Background
+
+The "[Matrix Digital Rain](https://en.wikipedia.org/wiki/Matrix_digital_rain)" refers to the iconic falling green code sequence featured in the opening of the Matrix series.
+
+Here is a video clip from one of the movies showing the Matrix Digital Rain: [Download MKV File](https://rawcdn.githack.com/jialiang/huge-assets/5c89a3e05a61a01794c8072ef89592ad7bb11214/matrix/intro.mkv) (4.8MB).
+
+## Motivation
+
+Lots of people already attempted to reproduce the Matrix Digital Rain in code, but I found their results to be noticably different to the real thing and unsatisfying. So I decided to take a stab at it to see what the challenges are.
+
+## Observations
+
+Looking at the video clip above, here are some of my observations on what's going on:
+
+- The code is katakana, numbers and some symbols inverted on the Y axis.
+- The code doesn't actually move but continuously appended at the bottom.
+- At the end of the trail, the code fades out.
+- There seem to be some sort of motion blur on the code fading out.
+- There can be more than 1 stream of code per column.
+- Each frame, some of the characters change but most remain the same.
+- The glow is not constant but pulsates.
+- The glow is independent of the characters.
+- The light of the glow bleeds into nearby code.
+
+## Results
+
+I think what I have looks kind of good but it too looks nothing like the real thing.
+
+Looking at my observations now, it does seem like a tall order to make a convincing copy in code.
+
+## Takeaway
+
+So what did I learned technical-wise from doing this project?
+
+- Firefox have trouble animating opacity of elements with lots texts with text-shadow.
+
+- Applying \`filter: blur\` on the body is surprisingly viable. I'd expect the animation to slow to a crawl everywhere but it didn't. Even on mobile, it is only Firefox who struggled while Chrome chugs along at an acceptable framerate. I'm now more open-minded about using it in future projects.
+
+- For presentation purposes, the illusion of randomness is sufficient.
+
+- Everyone blurs and shadows things differently.
+
+---
+
+<small>*Information presented here is true at the time of writing*</small>
+    `) %>
+  </div>
+</section>

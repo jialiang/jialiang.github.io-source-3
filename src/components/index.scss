@@ -59,11 +59,11 @@ body {
 
   .vignette {
     background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.25),
-    transparent,
-    transparent,
-    rgba(0, 0, 0, 0.25)
+      to right,
+      rgba(0, 0, 0, 0.25),
+      transparent,
+      transparent,
+      rgba(0, 0, 0, 0.25)
     );
   }
 
@@ -186,10 +186,12 @@ a {
     }
   }
 
+  h2,
   p,
   li,
   strong,
-  em {
+  em,
+  code {
     &::selection {
       color: white;
       background: #0078d7;
