@@ -106,13 +106,13 @@ task("build", build);
 
 task("report-production-size", () => {
   const options = {
-    WEBP: "./dist/images/*-780.webp",
+    WEBP: "./dist/images/*-520.webp",
     SVG: "./src/images/*.svg",
     WOFF2: "./dist/*.woff2",
     PNG: "./dist/images/*.png",
     CSS: "./dist/*.css",
     HTML: "./dist/*.html",
-    TOTAL: ["./dist/**/*.{html,woff2}", "./dist/**/*-780.webp"],
+    TOTAL: ["./dist/**/*.{html,woff2}", "./dist/**/*-520.webp"],
   };
   const results = {};
   const task = Object.keys(options).map((key) => {
