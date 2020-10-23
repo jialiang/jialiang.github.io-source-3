@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jia Liang",
@@ -39,5 +40,8 @@
     "last 2 FirefoxAndroid versions",
     "last 1 OperaMobile versions",
     "last 2 iOS versions"
-  ]
+  ],
+  "resolutions": {
+    "mime": "1.6.0"
+  }
 }
