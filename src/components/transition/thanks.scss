@@ -22,16 +22,16 @@
 }
 
 .thanks-filter {
-  transform: scale(0);
+  transform: scale3d(0, 0, 1);
   pointer-events: none;
   background: inline-svg("radial") 50% 50%/100% auto,
-  radial-gradient(gold, goldenrod);
+    radial-gradient(gold, goldenrod);
 
   mix-blend-mode: hard-light;
 
   @media (max-width: 550px) {
     background-image: inline-svg("radial-solid"),
-    radial-gradient(gold, rgba(218, 165, 32, 0.5));
+      radial-gradient(gold, rgba(218, 165, 32, 0.5));
 
     mix-blend-mode: normal;
   }
@@ -52,17 +52,17 @@
 
   ~ .thanks-filter {
     transition: 0.3s transform 0.1s;
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
 @keyframes star-fade-in {
   0% {
-    transform: scale(10) rotateZ(14deg);
+    transform: scale3d(10, 10, 1) rotateZ(14deg);
     opacity: 0;
   }
   100% {
-    transform: scale(1) rotateZ(14deg);
+    transform: scale3d(1, 1, 1) rotateZ(14deg);
     opacity: 1;
   }
 }
