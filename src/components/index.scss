@@ -270,8 +270,8 @@ a {
         left: 0;
         padding: 0.5em;
         text-align: right;
-        background: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 0 2.5em black inset;
+        background: radial-gradient(rgba(0, 0, 0, 0), black 99%),
+        rgba(0, 0, 0, 0.8);
         text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 
         .title {
