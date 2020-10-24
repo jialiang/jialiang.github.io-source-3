@@ -152,7 +152,7 @@ task("report-production-size", () => {
 
 exports.default = () => {
   watch(
-    ["./src/images/*.{jpg,png}", "./src/static/*"],
+    ["./src/images/*.{jpg,png,webp}", "./src/static/*"],
     { ignoreInitial: false },
     copyStatic
   );
