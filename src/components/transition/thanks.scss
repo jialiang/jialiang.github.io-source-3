@@ -52,7 +52,7 @@
 
   ~ .thanks-filter {
     transition: 0.3s transform 0.1s;
-    transform: scale3d(1, 1, 1);
+    transform: none;
   }
 }
 
@@ -62,7 +62,7 @@
     opacity: 0;
   }
   100% {
-    transform: scale3d(1, 1, 1) rotateZ(14deg);
+    transform: rotateZ(14deg);
     opacity: 1;
   }
 }

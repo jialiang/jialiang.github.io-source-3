@@ -49,19 +49,19 @@
 
 #work:target {
   ~ .work-filter {
-    transition: 0.3s transform 0.1s;
-    transform: scale3d(1, 1, 1);
+    transition: 0.29s transform 0.1s;
+    transform: none;
   }
 
   ~ .work-decorations {
     .fish-1 {
-      transition: 0.25s transform 0.3s;
-      transform: scale3d(1, 1, 1);
+      transition: 0.24s transform 0.4s;
+      transform: none;
     }
 
     .fish-2 {
-      transition: 0.25s transform 0.45s;
-      transform: rotateZ(90deg) scale3d(1, 1, 1);
+      transition: 0.24s transform 0.65s;
+      transform: rotateZ(90deg);
     }
   }
 }

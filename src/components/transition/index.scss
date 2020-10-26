@@ -12,10 +12,6 @@ section.mainmenu {
   }
 }
 
-.text-container {
-  animation: 0.5s fade-in 0.4s both;
-}
-
 .back {
   visibility: hidden;
 }
@@ -34,6 +30,7 @@ section.mainmenu {
 
 section:target {
   display: block;
+  animation: 0.5s fade-in 0.4s both;
 
   ~ section.mainmenu {
     .glow {
