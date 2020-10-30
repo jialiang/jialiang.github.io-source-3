@@ -63,40 +63,47 @@
       <!--  -->
       <%- include("components/transition/index") %>
       <!--  -->
+
       <script>
-        var d = document;
-        var raf = requestAnimationFrame;
-        var skipIntro = false;
-        [].forEach.call(d.querySelectorAll("section"), function (section) {
-          if (section.id && "#" + section.id === location.hash) {
-            d.body.className = "skip-intro";
-            skipIntro = true;
-            section.focus();
+        function init() {
+          var d = document;
+          var raf = requestAnimationFrame;
+          var qs = d.querySelector.bind(d);
+          var qsa = d.querySelectorAll.bind(d);
+
+          function loop(arr, callback) {
+            [].forEach.call(arr, callback);
           }
-        });
-        if (!skipIntro) {
-          d.body.className =
-            "js-controlled pause-intro-1 pause-intro-2 pause-intro-3";
-          raf(function () {
-            d.body.className = "js-controlled pause-intro-2 pause-intro-3";
-          });
-          d.querySelector(".intro-0").addEventListener(
-            "animationend",
-            function (e) {
-              if (e.animationName !== "shrink-x") return;
-              raf(function () {
-                d.body.className = "js-controlled pause-intro-3";
-              });
+
+          var skipIntro = false;
+
+          loop(qsa("section"), function (section) {
+            if (section.id && "#" + section.id === location.hash) {
+              d.body.className = "skip-intro";
+              skipIntro = true;
+              section.focus();
             }
-          );
-          d.querySelector(".intro-2 .reveal").addEventListener(
+          });
+
+          if (skipIntro) return;
+
+          d.body.className = "pause-intro pause-leaves";
+
+          raf(function () {
+            d.body.className = "pause-leaves";
+          });
+
+          qs(".intro-1 .square").addEventListener(
             "animationend",
             raf.bind(window, function () {
-              d.body.className = "js-controlled";
+              d.body.className = "";
             })
           );
         }
+
+        init();
       </script>
+
       <div class="vignette" role="presentation"></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -112,7 +112,7 @@ section.mainmenu {
     height: 10vh;
     margin: auto;
     transform-origin: right;
-    animation: 0.39s shrink-x 0.6s both;
+    animation: 0.29s intro-0-shrink-x 0.5s both;
     text-align: center;
     color: white;
     border: 4px solid white;
@@ -124,7 +124,7 @@ section.mainmenu {
       width: calc(100% - 2vh);
       height: calc(100% - 2vh);
       transform-origin: left;
-      animation: 0.39s expand-x 0.2s linear both;
+      animation: 0.29s intro-0-inner-expand-x 0.2s linear both;
       text-align: center;
       color: white;
       background: white;
@@ -132,78 +132,46 @@ section.mainmenu {
   }
 
   .intro-1 {
-    animation: 0s fade-out 1.9s both;
-    background: #d1a12e;
-
-    .circle {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .background {
       width: 100%;
       height: 100%;
-      animation: 0.29s expand both;
-
-      &:nth-child(1) {
-        animation-delay: 1.15s;
-        background: #d1542e;
-      }
-
-      &:nth-child(2) {
-        animation-delay: 1.3s;
-        background: #2ed1b4;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 1.45s;
-        background: #542ed1;
-      }
-
-      &:nth-child(4) {
-        animation-delay: 1.6s;
-        background: #d1a12e;
-      }
-    }
-  }
-
-  .intro-2 {
-    .reveal {
-      position: absolute;
+      animation: 0s fade-out 1.425s both;
       background: #d1a12e;
+    }
+
+    .square {
+      position: absolute;
+      z-index: 1;
+      width: 51%;
+      height: 51%;
+      animation: 1.25s square-shrink 0.8s both ease-in-out;
 
       &:nth-child(1) {
         top: 0;
         left: 0;
-        width: 100%;
-        height: 50%;
-        transform-origin: top;
-        animation: 0.29s shrink-y 1.91s both;
+        transform-origin: top left;
+        background: linear-gradient(to top left, black, #1d1423);
       }
 
       &:nth-child(2) {
         top: 0;
         right: 0;
-        width: 50%;
-        height: 100%;
-        transform-origin: right;
-        animation: 0.29s shrink-x 1.91s both;
+        transform-origin: top right;
+        background: linear-gradient(to top right, black, #1d1423);
       }
 
       &:nth-child(3) {
         bottom: 0;
         left: 0;
-        width: 100%;
-        height: 50%;
-        transform-origin: bottom;
-        animation: 0.29s shrink-y 1.91s both;
+        transform-origin: bottom left;
+        background: linear-gradient(to bottom left, black, #1d1423);
       }
 
       &:nth-child(4) {
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        transform-origin: left;
-        animation: 0.3s shrink-x 1.91s both;
+        right: 0;
+        bottom: 0;
+        transform-origin: bottom right;
+        background: linear-gradient(to bottom right, black, #1d1423);
       }
     }
   }
@@ -231,59 +199,22 @@ section.mainmenu {
 
 .skip-intro section.mainmenu {
   .intro-0,
-  .intro-0 .inner,
-  .intro-1,
-  .intro-1 .circle,
-  .intro-2 .reveal {
+  .intro-1 {
     display: none;
   }
 }
 
-.js-controlled section.mainmenu {
-  .intro-1 {
-    animation-delay: 0.9s;
-
-    .circle {
-      &:nth-child(1) {
-        animation-delay: 0.15s;
-      }
-
-      &:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 0.45s;
-      }
-
-      &:nth-child(4) {
-        animation-delay: 0.6s;
-      }
-    }
-  }
-
-  .intro-2 .reveal {
-    animation-delay: 0.91s;
+.pause-leaves section.mainmenu {
+  .leaf-container .leaf {
+    animation-play-state: paused;
   }
 }
 
-.pause-intro-1 section.mainmenu {
+.pause-intro section.mainmenu {
   .intro-0,
-  .intro-0 .inner {
-    animation-play-state: paused;
-  }
-}
-
-.pause-intro-2 section.mainmenu {
-  .intro-1,
-  .intro-1 .circle,
-  .intro-2 .reveal {
-    animation-play-state: paused;
-  }
-}
-
-.pause-intro-3 section.mainmenu {
-  .leaf {
+  .intro-0 .inner,
+  .intro-1 .background,
+  .intro-1 .square {
     animation-play-state: paused;
   }
 }
