@@ -25,13 +25,15 @@
   transform: scale3d(0, 0, 1);
   pointer-events: none;
   background: inline-svg("radial") 50% 50%/100% auto,
-  radial-gradient(gold, goldenrod);
+    radial-gradient(gold, goldenrod);
 
   mix-blend-mode: hard-light;
 
-  @media (max-width: 25.5em) {
+  @media (-ms-high-contrast: none),
+    (-ms-high-contrast: active),
+    (max-width: 25.5em) {
     background-image: inline-svg("radial-solid"),
-    radial-gradient(gold, rgba(218, 165, 32, 0.5));
+      radial-gradient(gold, rgba(218, 165, 32, 0.5));
 
     mix-blend-mode: normal;
   }
@@ -43,53 +45,53 @@
 
 #thanks:target {
   h1 {
-    animation: 0.25s shake 0.55s both;
+    animation: 0.24s shake 0.65s both;
   }
 
   .star {
-    animation: 0.24s star-fade-in 0.3s ease-in both;
+    animation: 0.24s star-fade-in 0.4s ease-in both;
   }
 
   ~ .thanks-filter {
-    transition: 0.3s transform 0.1s;
-    transform: none;
+    transition: 0.29s transform 0.1s;
+    transform: scale3d(1, 1, 1);
   }
 }
 
 @keyframes star-fade-in {
   0% {
-    transform: scale3d(10, 10, 1) rotateZ(14deg);
+    transform: scale3d(10, 10, 1) rotate3d(0, 0, 1, 14deg);
     opacity: 0;
   }
   100% {
-    transform: rotateZ(14deg);
+    transform: rotate3d(0, 0, 1, 14deg);
     opacity: 1;
   }
 }
 
 @keyframes shake {
   0% {
-    transform: translate(1px, 1px) rotateZ(0deg);
+    transform: translate3d(1px, 1px, 0) rotate3d(0, 0, 1, 0deg);
   }
   10% {
-    transform: translate(-1px, -2px) rotateZ(-1deg);
+    transform: translate3d(-1px, -2px, 0) rotate3d(0, 0, 1, -1deg);
   }
   30% {
-    transform: translate(3px, 2px) rotateZ(0deg);
+    transform: translate3d(3px, 2px, 0) rotate3d(0, 0, 1, 0deg);
   }
   40% {
-    transform: translate(1px, -1px) rotateZ(1deg);
+    transform: translate3d(1px, -1px, 0) rotate3d(0, 0, 1, 1deg);
   }
   60% {
-    transform: translate(-3px, 1px) rotateZ(0deg);
+    transform: translate3d(-3px, 1px, 0) rotate3d(0, 0, 1, 0deg);
   }
   70% {
-    transform: translate(3px, 1px) rotateZ(-1deg);
+    transform: translate3d(3px, 1px, 0) rotate3d(0, 0, 1, -1deg);
   }
   90% {
-    transform: translate(1px, 2px) rotateZ(0deg);
+    transform: translate3d(1px, 2px, 0) rotate3d(0, 0, 1, 0deg);
   }
   100% {
-    transform: translate(1px, -2px) rotateZ(-1deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, -1deg);
   }
 }

@@ -33,13 +33,14 @@ body {
   }
 
   > section {
-    position: relative;
+    position: absolute;
     z-index: 2;
     overflow-x: hidden;
     overflow-y: auto;
     box-sizing: border-box;
     height: 100%;
     border-left: 2px solid rgba(0, 0, 0, 0);
+    transform: translateZ(0);
 
     &:focus {
       box-sizing: border-box;
@@ -73,11 +74,11 @@ body {
 
   .vignette {
     background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.25),
-    transparent,
-    transparent,
-    rgba(0, 0, 0, 0.25)
+      to right,
+      rgba(0, 0, 0, 0.25),
+      transparent,
+      transparent,
+      rgba(0, 0, 0, 0.25)
     );
   }
 
@@ -87,7 +88,7 @@ body {
     z-index: 2;
     right: calc(50vw - 50vh / 9 * 16);
     bottom: 1vh;
-    transform: rotateZ(-3deg);
+    transform: rotate3d(0, 0, 1, -3deg);
 
     @media (max-aspect-ratio: 16 / 9) {
       right: 1vh;
@@ -271,7 +272,7 @@ a {
         padding: 0.5em;
         text-align: right;
         background: radial-gradient(rgba(0, 0, 0, 0), black 99%),
-        rgba(0, 0, 0, 0.8);
+          rgba(0, 0, 0, 0.8);
         text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 
         .title {

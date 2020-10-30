@@ -65,12 +65,37 @@
       <!--  -->
       <script>
         var d = document;
+        var raf = requestAnimationFrame;
+        var skipIntro = false;
         [].forEach.call(d.querySelectorAll("section"), function (section) {
           if (section.id && "#" + section.id === location.hash) {
             d.body.className = "skip-intro";
+            skipIntro = true;
             section.focus();
           }
         });
+        if (!skipIntro) {
+          d.body.className =
+            "js-controlled pause-intro-1 pause-intro-2 pause-intro-3";
+          raf(function () {
+            d.body.className = "js-controlled pause-intro-2 pause-intro-3";
+          });
+          d.querySelector(".intro-0").addEventListener(
+            "animationend",
+            function (e) {
+              if (e.animationName !== "shrink-x") return;
+              raf(function () {
+                d.body.className = "js-controlled pause-intro-3";
+              });
+            }
+          );
+          d.querySelector(".intro-2 .reveal").addEventListener(
+            "animationend",
+            raf.bind(window, function () {
+              d.body.className = "js-controlled";
+            })
+          );
+        }
       </script>
       <div class="vignette" role="presentation"></div>
       <svg

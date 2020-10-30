@@ -1,9 +1,9 @@
 section {
-  display: none;
+  visibility: hidden;
 }
 
 section.mainmenu {
-  display: block;
+  visibility: visible;
 
   .logo,
   .nav a {
@@ -29,16 +29,13 @@ section.mainmenu {
 }
 
 section:target {
-  display: block;
+  visibility: visible;
   animation: 0.5s fade-in 0.4s both;
 
   ~ section.mainmenu {
-    .glow {
-      animation-play-state: paused;
-    }
-
+    .glow,
     .leaf {
-      visibility: hidden;
+      animation-play-state: paused;
     }
 
     .logo,
@@ -74,12 +71,5 @@ section:target {
     ~ .to-work {
       visibility: visible;
     }
-  }
-}
-
-@media (-ms-high-contrast: none) and (min-width: 499px),
-  (-ms-high-contrast: active) and (min-width: 499px) {
-  .sub-body div[class$="-filter"] {
-    opacity: 0.5;
   }
 }

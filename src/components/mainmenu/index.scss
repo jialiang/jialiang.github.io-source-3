@@ -7,6 +7,7 @@ section.mainmenu {
 
   .room {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,16 +17,18 @@ section.mainmenu {
 
   .glow {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    animation: 0.2s flicker linear infinite;
+    animation: 0.2s flicker steps(1) infinite;
     background: inline-svg("glow") 0 0 / auto 100% no-repeat;
   }
 
   .paper {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,7 +42,7 @@ section.mainmenu {
       position: absolute;
       width: 5vmin;
       height: 5vmin;
-      background: inline-svg("leaf") 50% 50%/100% 100% no-repeat;
+      background: url("images/leaf.png") 50% 50%/100% 100% no-repeat;
     }
   }
 
@@ -54,11 +57,9 @@ section.mainmenu {
 
   .logo {
     font-size: 1vh;
-    position: relative;
     overflow: hidden;
     width: 95vmin;
     height: 67%;
-    margin: auto;
     margin: auto;
     white-space: nowrap;
     background: inline-svg("logo") 50% 50%/100% auto no-repeat;
@@ -175,7 +176,7 @@ section.mainmenu {
         width: 100%;
         height: 50%;
         transform-origin: top;
-        animation: 0.3s shrink-y 1.9s both;
+        animation: 0.29s shrink-y 1.91s both;
       }
 
       &:nth-child(2) {
@@ -184,7 +185,7 @@ section.mainmenu {
         width: 50%;
         height: 100%;
         transform-origin: right;
-        animation: 0.3s shrink-x 1.9s both;
+        animation: 0.29s shrink-x 1.91s both;
       }
 
       &:nth-child(3) {
@@ -193,7 +194,7 @@ section.mainmenu {
         width: 100%;
         height: 50%;
         transform-origin: bottom;
-        animation: 0.3s shrink-y 1.9s both;
+        animation: 0.29s shrink-y 1.91s both;
       }
 
       &:nth-child(4) {
@@ -202,17 +203,15 @@ section.mainmenu {
         width: 50%;
         height: 100%;
         transform-origin: left;
-        animation: 0.3s shrink-x 1.9s both;
+        animation: 0.3s shrink-x 1.91s both;
       }
     }
   }
 
   @media (max-aspect-ratio: 1 / 1) {
-    .room {
-      background-attachment: fixed;
-    }
-
-    .glow {
+    .room,
+    .glow,
+    .paper {
       background-attachment: fixed;
     }
   }
@@ -236,6 +235,55 @@ section.mainmenu {
   .intro-1,
   .intro-1 .circle,
   .intro-2 .reveal {
-    visibility: hidden;
+    display: none;
+  }
+}
+
+.js-controlled section.mainmenu {
+  .intro-1 {
+    animation-delay: 0.9s;
+
+    .circle {
+      &:nth-child(1) {
+        animation-delay: 0.15s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.45s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+    }
+  }
+
+  .intro-2 .reveal {
+    animation-delay: 0.91s;
+  }
+}
+
+.pause-intro-1 section.mainmenu {
+  .intro-0,
+  .intro-0 .inner {
+    animation-play-state: paused;
+  }
+}
+
+.pause-intro-2 section.mainmenu {
+  .intro-1,
+  .intro-1 .circle,
+  .intro-2 .reveal {
+    animation-play-state: paused;
+  }
+}
+
+.pause-intro-3 section.mainmenu {
+  .leaf {
+    animation-play-state: paused;
   }
 }
