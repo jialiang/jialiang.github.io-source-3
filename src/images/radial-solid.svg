@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
-  <g fill="#fff" fill-opacity=".5">
+  <g fill="#fff" fill-opacity=".35">
     <path d="M180 180L197.48 0h-35.54zM179.71 180l-17.48 180h35.54z"/>
     <path d="M179.71 180.14l180 17.48v-35.53zM179.71 179.86L-.289 162.38v35.53zM179.92 179.65L23.292 0H0l-.289 23.261z"/>
     <path d="M179.72 179.84L338.4 360H360v-22.04z"/>

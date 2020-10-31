@@ -38,6 +38,10 @@ section:target {
       animation-play-state: paused;
     }
 
+    .leaf {
+      visibility: hidden;
+    }
+
     .logo,
     .nav a {
       visibility: hidden;

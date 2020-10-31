@@ -29,9 +29,7 @@
 
   mix-blend-mode: hard-light;
 
-  @media (-ms-high-contrast: none),
-    (-ms-high-contrast: active),
-    (max-width: 25.5em) {
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     background-image: inline-svg("radial-solid"),
       radial-gradient(gold, rgba(218, 165, 32, 0.5));
 

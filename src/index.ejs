@@ -63,48 +63,6 @@
       <!--  -->
       <%- include("components/transition/index") %>
       <!--  -->
-
-      <script>
-        function init() {
-          var d = document;
-          var raf = requestAnimationFrame;
-          var qs = d.querySelector.bind(d);
-          var qsa = d.querySelectorAll.bind(d);
-
-          function loop(arr, callback) {
-            [].forEach.call(arr, callback);
-          }
-
-          var skipIntro = false;
-
-          loop(qsa("section"), function (section) {
-            if (section.id && "#" + section.id === location.hash) {
-              d.body.className = "skip-intro";
-              skipIntro = true;
-              section.focus();
-            }
-          });
-
-          if (skipIntro) return;
-
-          d.body.className = "pause-intro pause-leaves";
-
-          raf(function () {
-            d.body.className = "pause-leaves";
-          });
-
-          qs(".intro-1 .square").addEventListener(
-            "animationend",
-            raf.bind(window, function () {
-              d.body.className = "";
-            })
-          );
-        }
-
-        init();
-      </script>
-
-      <div class="vignette" role="presentation"></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="cover"
@@ -126,5 +84,124 @@
         >BACK</a
       >
     </div>
+    <script>
+      function init() {
+        var d = document;
+        var raf = requestAnimationFrame;
+        var qs = d.querySelector.bind(d);
+        var qsa = d.querySelectorAll.bind(d);
+
+        function loop(arr, callback) {
+          [].forEach.call(arr, callback);
+        }
+
+        function addClass(elem, str) {
+          if (elem.className.indexOf(str) < 0) {
+            elem.className += " " + str;
+          }
+        }
+
+        function removeClass(elem, str) {
+          if (elem.className.indexOf(str) >= 0) {
+            elem.className = elem.className.replace(str, "");
+          }
+        }
+
+        function chainRaf(actions) {
+          var index = 0;
+
+          function next() {
+            if (index < actions.length) {
+              actions[index]();
+              index += 1;
+              next();
+            }
+          }
+          next();
+        }
+
+        var skipIntro = false;
+
+        addClass(d.body, "js");
+
+        // Skips intro
+        {
+          loop(qsa("section"), function (section) {
+            if (section.id && "#" + section.id === location.hash) {
+              addClass(d.body, "skip-intro");
+              skipIntro = true;
+              section.focus();
+            }
+          });
+        }
+
+        // Controls switching between pages
+        {
+          var infinites = qsa(".leaf-container, .glow");
+
+          var pauseInfinites = function () {
+            loop(infinites, function (elem) {
+              addClass(elem, "pause");
+            });
+          };
+
+          var unpauseInfinites = function () {
+            loop(infinites, function (elem) {
+              removeClass(elem, "pause");
+            });
+          };
+
+          loop(qsa("a[href^='#']"), function (a) {
+            a.addEventListener("click", function (e) {
+              e.preventDefault();
+              var href = this.getAttribute("href");
+              var applyHref = function () {
+                location.hash = href;
+              };
+
+              if (href === "#") {
+                chainRaf([applyHref, unpauseInfinites]);
+              } else {
+                chainRaf([pauseInfinites, applyHref]);
+              }
+            });
+          });
+        }
+
+        if (skipIntro) return;
+
+        // Controls intro animation
+        {
+          var introElems = [
+            ".intro-0 .inner",
+            ".intro-0",
+            ".intro-1 .square, .intro-1 .background",
+            ".leaf-container",
+          ];
+
+          var next = raf.bind(window, function (callback) {
+            var elems = qsa(introElems.shift());
+            loop(elems, function (elem) {
+              removeClass(elem, "pause");
+            });
+          });
+
+          loop(introElems, function (selector) {
+            var elems = qsa(selector);
+            loop(elems, function (elem) {
+              addClass(elem, "pause");
+            });
+            elems[0].addEventListener("animationend", function (e) {
+              if (e.target !== elems[0]) return;
+              raf(next);
+            });
+          });
+
+          next();
+        }
+      }
+
+      init();
+    </script>
   </body>
 </html>
