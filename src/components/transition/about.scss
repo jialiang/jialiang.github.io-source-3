@@ -87,7 +87,7 @@
       }
 
       &:nth-child(2) {
-        transition: 0.24s transform 0.8s;
+        transition: 0.24s transform 0.7s;
         transform: rotate3d(0, 0, 1, 5deg) scale3d(1, 1, 1);
       }
     }
@@ -98,7 +98,7 @@
     }
 
     .flower-2 {
-      transition: 0.24s transform 1.05s;
+      transition: 0.24s transform 0.85s;
       transform: rotate3d(0, 0, 1, -90deg) scale3d(1, 1, 1);
     }
   }
