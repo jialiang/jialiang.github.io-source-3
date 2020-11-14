@@ -1,0 +1,59 @@
+<!-- prettier-ignore -->
+<section id="gems" class="article" role="dialog" tabindex="0">
+  <div class="text-container">
+    <%- md(`
+# <span>Space Gems</span>
+
+<small>*Written on 15 Oct 2020*</small>
+
+[Github repository](https://github.com/jialiang/space-gems)
+[Link to Demo](https://jialiang.github.io/space-gems/)
+
+---
+
+This was one of my first React projects back when I was still learning React but I had just recently rebuild it. It's a simple tile-matching game inspired by Bejewelled.
+
+## Getting Started
+
+This time around I decided to use the popular [Create-React-App (CRA)](https://github.com/facebook/create-react-app) as my starting point. Normally I'd setup my own build tools so that I can easily configure them to my liking but since I'm creating a React app, I'm sure CRA should have some sane defaults that I feel that I would find agreeable enough. For the most part it works exceedingly well, the problem mostly stems when building for production.
+
+One of the problems with CRA was that it doesn't generate pre-rendered HTML files. Pre-rendering helps to populate the initial HTML payload with critical content. Without pre-rendering, my game would need to wait for the HTML to load and then wait for the JavaScript scripts to load and execute before anything starts getting rendered. I found a tool called [React-Snap](https://github.com/stereobooster/react-snap) which I setup to run post-build to generate pre-rendered HTML files. It also helps embed critical CSS too.
+
+Another problem was that the outputted JavaScript contains lots of unused code. I looked through the coverage report in Chrome's DevTools and around 30% of the JavaScript code were unused. I heard tree-shaking only works with ES6 Modules ([Source 1](https://bitsofco.de/what-is-tree-shaking/), [Source 2](https://webpack.js.org/guides/tree-shaking/)) which React and React-Dom are not. I also couldn't find any tools that can remove dead code based on Chrome's coverage report. At this point, I considered migrating to [Preact-CLI](https://github.com/preactjs/preact-cli).
+
+I have always had a fondness for [Preact](https://preactjs.com/). It's basically a lightweight version of React with reduced features and is designed to be a drop-in replacement for React. React + React-Dom is around 40kB gzipped while Preact is just 3kB. Preact-CLI is basically Preact's version of CRA. Considering the React feature set that my game uses, I figure I could probably migrate without much problems and just like that I plop my code down and it fits snugly like a glove.
+
+## Closures
+
+At first I though of trying out functional React components with hooks. Functional components used to be stateless without any lifecycle methods but with the new React hooks like \`useState\`, \`useRef\` and \`useEffect\`, the lines seem to blur a bit. Before we go further let's take a look on what my game would need if I were to do it class component style, I figure I would need:
+
+- State and props
+- Member variables
+- Member methods
+- \`ComponentWillUpdate\`
+
+With functional components, it will most likely translate to:
+
+- State will become \`useState\`, props remain props
+- Member variables will become \`useRef\`
+- Member methods will become local functions preserved with \`useCallback\`
+- \`ComponentWillUpdate\` will become \`useRef\`
+
+At this point, my concerns were with the overhead of the constant re-initialization of local functions each render. According to the [Hooks FAQ](https://reactjs.org/docs/hooks-faq.html#are-hooks-slow-because-of-creating-functions-in-render), they basically say that the benefits of Hooks outweighs the downsides performance-wise. Anyway at the time of the rebuild, while I got it to work, I don't feel comfortable about it because there were stuff I don't really understand fully, like the conditional firing of \`useEffect\`, so the current version of Space Gems uses class components at the moment.
+
+Now, even though the rebuild doesn't use functional components, code-wise it did have some improvements over the old versions, notably the use of the dependency injection pattern. What this means is that whatever dependencies a function needs are passed in as parameters. This makes the function pure and side-effect free. Given the same inputs, it will always return the same output. It doesn't rely or modify any global state. This makes the function loosely-coupled, thus it is easy to reuse and easy to test. To avoid having to keep passing in these dependencies every time the function is called, partial application is used. Static dependencies are passed in as parameters and a function bound with these passed-in arguments is returned. Thus I can call the bound function with only dynamic dependencies.
+
+## Performance
+
+Other stuff I did to improve performance include subsetting the font files, using responsive and webP images with fallback and asynchronous stylesheets.
+
+The entire game excluding audio weights in at around 145.27kB gzipped, of which 109.88kB are images.
+
+I also got a 98/100 for Performance according to [Lighthouse](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fjialiang.github.io%2Fspace-gems%2F). The missing 2 points likely stem from the "largest content paint" and "cumulative layout shift" criteria which are false positive caused by the background image.
+
+---
+
+<small>*Information presented here is true at the time of writing*</small>
+    `) %>
+  </div>
+</section>
