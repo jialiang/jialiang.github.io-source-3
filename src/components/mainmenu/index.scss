@@ -154,6 +154,7 @@ section.mainmenu {
       width: 51%;
       height: 51%;
       animation: 1.25s square-shrink 0.8s both ease-in-out;
+      will-change: transform;
 
       &:nth-child(1) {
         top: 0;
