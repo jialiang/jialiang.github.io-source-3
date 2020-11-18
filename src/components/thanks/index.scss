@@ -2,9 +2,11 @@
   .text-container {
     ul {
       margin: 2em 0;
+      padding-left: 0;
 
       li {
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        box-shadow: 0.25em 0.25em 0 white;
       }
     }
   }

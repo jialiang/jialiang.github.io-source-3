@@ -141,8 +141,6 @@ a {
   margin: auto;
   padding: 10vh 1em 20vh 1em;
   color: white;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 3vh black;
 
   h1 {
     font-size: 2em;
@@ -152,11 +150,12 @@ a {
     span {
       font-weight: bold;
       overflow: hidden;
-      padding: 0.1em 0.25em;
+      padding: 0 0.25em;
       white-space: nowrap;
       text-overflow: ellipsis;
       color: black;
       background: white;
+      box-shadow: 0 0 0.15em white;
     }
   }
 
@@ -166,11 +165,6 @@ a {
   th,
   td {
     line-height: 1.5;
-    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
-
-    a {
-      box-shadow: 0 4px 4px -4px black, 0 4px 4px -4px black;
-    }
   }
 
   h2 {
@@ -182,7 +176,7 @@ a {
   }
 
   p {
-    margin: 1.5em 0;
+    margin: 0.67em 0;
   }
 
   ul {
@@ -294,6 +288,14 @@ a {
     }
   }
 
+  .no-break {
+    white-space: nowrap;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
   .text-left {
     text-align: left;
   }
@@ -303,10 +305,31 @@ a {
   }
 }
 
-.article {
-  .text-container {
-    background: none;
-    box-shadow: none;
+#about,
+#work,
+#thanks {
+  li,
+  p {
+    line-height: 1.5;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border: 2px solid black;
+    background: radial-gradient(rgba(0, 0, 0, 0.67), black);
+    box-shadow: 0.25em 0.25em red;
+    box-sizing: border-box;
+    max-width: 100%;
+
+    &.white {
+      font-weight: bold;
+      transform: rotateZ(-3deg);
+      color: black;
+      background: white;
+      text-align: center;
+    }
+  }
+
+  li {
+    text-align: left;
   }
 }
 

@@ -1,0 +1,11 @@
+#work {
+  .text-container {
+    p {
+      box-shadow: 0.25em 0.25em 0 cyan;
+
+      @media (max-width: 25em) {
+        width: min-content;
+      }
+    }
+  }
+}
