@@ -42,6 +42,8 @@ body {
     transform: translateZ(0);
     border-left: 2px solid rgba(0, 0, 0, 0);
 
+    overscroll-behavior-y: contain;
+
     &:focus {
       box-sizing: border-box;
       border-left-color: rgba(255, 255, 255, 0.5);
@@ -312,19 +314,19 @@ a {
   p {
     line-height: 1.5;
     display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
     padding: 0.25em 0.5em;
     border: 2px solid black;
     background: radial-gradient(rgba(0, 0, 0, 0.67), black);
     box-shadow: 0.25em 0.25em red;
-    box-sizing: border-box;
-    max-width: 100%;
 
     &.white {
       font-weight: bold;
       transform: rotateZ(-3deg);
+      text-align: center;
       color: black;
       background: white;
-      text-align: center;
     }
   }
 

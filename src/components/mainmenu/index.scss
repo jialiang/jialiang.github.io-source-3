@@ -146,6 +146,7 @@ section.mainmenu {
       height: 100%;
       animation: 0.25s fade-out 1.425s both;
       background: #d1a12e;
+
       will-change: opacity;
     }
 
@@ -155,6 +156,7 @@ section.mainmenu {
       width: 51%;
       height: 51%;
       animation: 1.25s square-shrink 0.8s both ease-in-out;
+
       will-change: transform;
 
       &:nth-child(1) {
