@@ -141,52 +141,8 @@ section.mainmenu {
   }
 
   .intro-1 {
-    .background {
-      width: 100%;
-      height: 100%;
-      animation: 0.25s fade-out 1.425s both;
-      background: #d1a12e;
-
-      will-change: opacity;
-    }
-
-    .square {
-      position: absolute;
-      z-index: 1;
-      width: 51%;
-      height: 51%;
-      animation: 1.25s square-shrink 0.8s both ease-in-out;
-
-      will-change: transform;
-
-      &:nth-child(1) {
-        top: 0;
-        left: 0;
-        transform-origin: top left;
-        background: linear-gradient(to top left, black, #1d1423);
-      }
-
-      &:nth-child(2) {
-        top: 0;
-        right: 0;
-        transform-origin: top right;
-        background: linear-gradient(to top right, black, #1d1423);
-      }
-
-      &:nth-child(3) {
-        bottom: 0;
-        left: 0;
-        transform-origin: bottom left;
-        background: linear-gradient(to bottom left, black, #1d1423);
-      }
-
-      &:nth-child(4) {
-        right: 0;
-        bottom: 0;
-        transform-origin: bottom right;
-        background: linear-gradient(to bottom right, black, #1d1423);
-      }
-    }
+    background: #d1a12e;
+    animation: 0.3s fade-out 0.8s both ease-out;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
@@ -212,15 +168,11 @@ section.mainmenu {
 
 .js section.mainmenu {
   .intro-0 {
-    animation-delay: 0.01s;
+    animation-delay: 0s;
   }
 
-  .intro-1 .background {
-    animation-delay: 0.625s;
-  }
-
-  .intro-1 .square {
-    animation-delay: 0.01s;
+  .intro-1 {
+    animation-delay: 0s;
   }
 }
 
