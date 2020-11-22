@@ -30,7 +30,7 @@ section.mainmenu {
 
 section:target {
   visibility: visible;
-  animation: 0.5s fade-in 0.4s both;
+  animation: 0.5s fade-in 0.5s both;
 
   ~ section.mainmenu {
     .glow,

@@ -23,36 +23,36 @@
 }
 
 .thanks-filter {
-  transform: scale3d(0, 0, 1);
+  transform: scale3d(0, 0, 0);
   pointer-events: none;
   background: inline-svg("radial") 50% 50%/100% auto,
     radial-gradient(gold, goldenrod);
 
   mix-blend-mode: hard-light;
-
-  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    background-image: inline-svg("radial-solid"),
-      radial-gradient(gold, rgba(218, 165, 32, 0.5));
-
-    mix-blend-mode: normal;
-  }
+  will-change: transform;
 
   @media (max-aspect-ratio: 1 / 1) {
     background-size: auto 100%;
+  }
+
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    opacity: 0.5;
+    background-image: inline-svg("radial-solid"),
+      radial-gradient(gold, rgba(218, 165, 32, 0.5));
   }
 }
 
 #thanks:target {
   h1 {
-    animation: 0.24s shake 0.6s both;
+    animation: 0.24s shake 0.8s both;
   }
 
   .star {
-    animation: 0.19s star-fade-in 0.4s ease-in both;
+    animation: 0.19s star-fade-in 0.6s ease-in both;
   }
 
   ~ .thanks-filter {
-    transition: 0.29s transform 0.1s;
+    transition: 0.29s transform;
     transform: scale3d(1, 1, 1);
   }
 }

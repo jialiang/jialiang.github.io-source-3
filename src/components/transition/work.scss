@@ -1,20 +1,20 @@
 @import "sass-inline-svg.scss";
 
 .work-filter {
-  transform: scale3d(0, 0, 1);
+  transform: scale3d(0, 0, 0);
   pointer-events: none;
   background: radial-gradient(#0980ff, #88e7d5, #6161b5);
 
   mix-blend-mode: hard-light;
+  will-change: transform;
 
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    opacity: 0.5;
     background: radial-gradient(
       rgba(10, 130, 255, 0.35),
       #00ffcf,
       rgba(0, 0, 250, 0.35)
     );
-
-    mix-blend-mode: normal;
   }
 }
 
@@ -51,18 +51,18 @@
 
 #work:target {
   ~ .work-filter {
-    transition: 0.29s transform 0.1s;
+    transition: 0.29s transform;
     transform: scale3d(1, 1, 1);
   }
 
   ~ .work-decorations {
     .fish-1 {
-      transition: 0.24s transform 0.4s;
+      transition: 0.24s transform 0.15s;
       transform: scale3d(1, 1, 1);
     }
 
     .fish-2 {
-      transition: 0.24s transform 0.65s;
+      transition: 0.24s transform 0.4s;
       transform: rotate3d(0, 0, 1, 90deg) scale3d(1, 1, 1);
     }
   }
