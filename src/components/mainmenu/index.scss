@@ -126,6 +126,10 @@ section.mainmenu {
     color: white;
     border: 4px solid white;
 
+    @media (max-aspect-ratio: 77 / 180) {
+      font-size: 11.5vmin;
+    }
+
     .inner {
       position: absolute;
       top: 1vh;

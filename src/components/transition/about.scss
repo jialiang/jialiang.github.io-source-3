@@ -36,15 +36,23 @@
     &:nth-child(1) {
       left: 0;
       width: 25%;
-      transform: rotate3d(0, 0, 1, -5deg) scale3d(0, 1, 1);
+      transform: rotate3d(0, 0, 1, -5deg) translate3d(-110%, 0, 0);
       transform-origin: left;
+
+      @media (max-aspect-ratio: 1 / 1) {
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(-33vw, 0, 0);
+      }
     }
 
     &:nth-child(2) {
       left: 75%;
       width: 12.5%;
-      transform: rotate3d(0, 0, 1, 5deg) scale3d(0, 1, 1);
+      transform: rotate3d(0, 0, 1, 5deg) translate3d(220%, 0, 0);
       transform-origin: right;
+
+      @media (max-aspect-ratio: 1 / 1) {
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(33vw, 0, 0);
+      }
     }
   }
 
@@ -83,12 +91,12 @@
     .pillar {
       &:nth-child(1) {
         transition: 0.24s transform 0.35s;
-        transform: rotate3d(0, 0, 1, -5deg) scale3d(1, 1, 1);
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(0, 0, 0);
       }
 
       &:nth-child(2) {
         transition: 0.24s transform 0.5s;
-        transform: rotate3d(0, 0, 1, 5deg) scale3d(1, 1, 1);
+        transform: rotate3d(0, 0, 1, 5deg) translate3d(0, 0, 0);
       }
     }
 

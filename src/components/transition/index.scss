@@ -75,5 +75,11 @@ section:target {
     ~ .to-work {
       visibility: visible;
     }
+
+    .text-container {
+      p {
+        margin: 1.75em 0;
+      }
+    }
   }
 }

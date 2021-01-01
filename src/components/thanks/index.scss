@@ -1,4 +1,8 @@
+@import "sass-inline-svg.scss";
+
 #thanks {
+  background: inline-svg("radial") 50% 50%/100% auto;
+
   .text-container {
     ul {
       margin: 2em 0;
