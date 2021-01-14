@@ -114,14 +114,14 @@ section.mainmenu {
     font-weight: bold;
     line-height: 10vh;
     position: absolute;
-    top: 45vh;
+    top: 30vh;
     right: 0;
     left: 0;
     width: 67%;
     height: 10vh;
     margin: auto;
     transform-origin: right;
-    animation: 0.29s intro-0-shrink-x 0.5s both;
+    animation: 0.34s intro-0-shrink-x 0.55s both;
     text-align: center;
     color: white;
     border: 4px solid white;
@@ -132,12 +132,12 @@ section.mainmenu {
 
     .inner {
       position: absolute;
-      top: 1vh;
-      left: 1vh;
-      width: calc(100% - 2vh);
-      height: calc(100% - 2vh);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       transform-origin: left;
-      animation: 0.29s intro-0-inner-expand-x 0.2s linear both;
+      animation: 0.34s intro-0-inner-expand-x 0.2s linear both;
       text-align: center;
       color: white;
       background: white;
@@ -145,8 +145,8 @@ section.mainmenu {
   }
 
   .intro-1 {
-    animation: 0.3s fade-out 0.8s both ease-out;
-    background: #d1a12e;
+    animation: 0.5s fade-out 0.9s both ease-out;
+    background: #d1a12e inline-svg("black-star") 0 70%/40px auto repeat-x;
   }
 
   @media (max-aspect-ratio: 1 / 1) {

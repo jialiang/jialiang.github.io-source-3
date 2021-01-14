@@ -28,4 +28,10 @@ call gm convert unused/project-5-1920.png -resize 360x project-5-360.webp
 
 call gm convert unused/project-5-1920.png -resize 780x project-5-780.jpg
 
+call gm convert unused/project-6-1920.png -resize 780x project-6-780.webp
+call gm convert unused/project-6-1920.png -resize 520x project-6-520.webp
+call gm convert unused/project-6-1920.png -resize 360x project-6-360.webp
+
+call gm convert unused/project-6-1920.png -resize 780x project-6-780.jpg
+
 pause
