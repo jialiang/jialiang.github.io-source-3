@@ -121,14 +121,10 @@ section.mainmenu {
     height: 10vh;
     margin: auto;
     transform-origin: right;
-    animation: 0.34s intro-0-shrink-x 0.55s both;
+    animation: 0.34s intro-0-shrink-x 0.85s both;
     text-align: center;
-    color: white;
-    border: 4px solid white;
-
-    @media (max-aspect-ratio: 77 / 180) {
-      font-size: 11.5vmin;
-    }
+    color: black;
+    border: 4px solid black;
 
     .inner {
       position: absolute;
@@ -137,16 +133,16 @@ section.mainmenu {
       width: 100%;
       height: 100%;
       transform-origin: left;
-      animation: 0.34s intro-0-inner-expand-x 0.2s linear both;
+      animation: 0.34s intro-0-inner-expand-x 0.5s linear both;
       text-align: center;
-      color: white;
-      background: white;
+      background: black;
     }
   }
 
   .intro-1 {
-    animation: 0.5s fade-out 0.9s both ease-out;
+    animation: 0.5s fade-out 1.2s both ease-out;
     background: #d1a12e inline-svg("black-star") 0 70%/40px auto repeat-x;
+    box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.5) inset;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
