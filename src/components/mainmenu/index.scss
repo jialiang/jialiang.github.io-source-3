@@ -23,7 +23,12 @@ section.mainmenu {
     width: 100%;
     height: 100%;
     animation: 0.2s flicker steps(1) infinite;
+    animation-play-state: paused;
     background: inline-svg("glow") 0 0 / auto 100% no-repeat;
+
+    &.play {
+      animation-play-state: running;
+    }
   }
 
   .paper {
@@ -42,13 +47,13 @@ section.mainmenu {
       position: absolute;
       width: 5vmin;
       height: 5vmin;
+      animation-play-state: paused;
       background: url("images/leaf.png") 50% 50%/100% 100% no-repeat;
     }
 
-    &.pause {
+    &.play {
       .leaf {
-        visibility: hidden;
-        animation-play-state: paused;
+        animation-play-state: running;
       }
     }
   }
@@ -77,7 +82,7 @@ section.mainmenu {
   .nav {
     font-size: 4.5vmin;
     position: absolute;
-    bottom: 10.5vh;
+    top: 62.5vh;
     left: 0;
     width: 100%;
     text-align: center;
@@ -88,6 +93,7 @@ section.mainmenu {
 
     .button {
       margin: 1vh 1em;
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
     }
 
     .thanks {
@@ -97,88 +103,5 @@ section.mainmenu {
       box-shadow: 0 4px 4px -4px black, 0 4px 4px -4px black;
       text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
     }
-  }
-
-  .intro-1,
-  .intro-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .intro-0 {
-    font-size: 5vh;
-    font-weight: bold;
-    line-height: 10vh;
-    position: absolute;
-    top: 30vh;
-    right: 0;
-    left: 0;
-    width: 67%;
-    height: 10vh;
-    margin: auto;
-    transform-origin: right;
-    animation: 0.34s intro-0-shrink-x 0.85s both;
-    text-align: center;
-    color: black;
-    border: 4px solid black;
-
-    .inner {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform-origin: left;
-      animation: 0.34s intro-0-inner-expand-x 0.5s linear both;
-      text-align: center;
-      background: black;
-    }
-  }
-
-  .intro-1 {
-    animation: 0.5s fade-out 1.2s both ease-out;
-    background: #d1a12e inline-svg("black-star") 0 70%/40px auto repeat-x;
-    box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.5) inset;
-  }
-
-  @media (max-aspect-ratio: 1 / 1) {
-    .room,
-    .glow,
-    .paper {
-      background-attachment: fixed;
-    }
-  }
-
-  @media (max-width: 600px), (max-height: 600px) {
-    .nav {
-      font-size: 27px;
-    }
-  }
-
-  @media (max-width: 390px), (max-height: 390px) {
-    .nav {
-      font-size: 5.9vmin;
-    }
-  }
-}
-
-.js section.mainmenu {
-  .intro-0 {
-    animation-delay: 0s;
-  }
-
-  .intro-1 {
-    animation-delay: 0s;
-  }
-}
-
-.skip-intro section.mainmenu {
-  .intro-0,
-  .intro-1 {
-    display: none;
   }
 }
