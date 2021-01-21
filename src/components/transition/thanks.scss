@@ -1,3 +1,5 @@
+@import "sass-inline-svg.scss";
+
 #thanks {
   h1 {
     position: relative;
@@ -23,7 +25,7 @@
 .thanks-filter {
   transform: scale3d(0, 0, 0);
   pointer-events: none;
-  background: radial-gradient(lightyellow, goldenrod);
+  background: radial-gradient(lightyellow, goldenrod) 0 0/100% auto no-repeat;
 
   mix-blend-mode: hard-light;
   will-change: transform;
@@ -34,7 +36,7 @@
 
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     opacity: 0.5;
-    background-image: inline-svg("radial-solid"),
+    background-image: inline-svg("radial-solid") 0 0/100% auto no-repeat,
       radial-gradient(gold, rgba(218, 165, 32, 0.5));
   }
 }
