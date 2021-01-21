@@ -108,14 +108,15 @@ task("report-production-size", () => {
   const options = {
     WEBP: "./dist/images/*-520.webp",
     SVG: "./src/images/*.svg",
-    WOFF2: "./dist/*.woff2",
+    WOFF: "./src/static/fonts.css",
     PNG: "./dist/images/*.png",
-    CSS: "./dist/*.css",
-    HTML: "./dist/*.html",
-    TOTAL: ["./dist/**/*.{html,woff2}", "./dist/**/*-520.webp"],
+    CSS: "./src/**/*.scss",
+    HTML: "./src/**/*.ejs",
   };
+
+  let total = 0;
   const results = {};
-  const task = Object.keys(options).map((key) => {
+  const task = Object.keys(options).map((key, index, array) => {
     return (done) => {
       const s = size({ title: key, gzip: true, showFiles: false });
       return src(options[key])
@@ -123,13 +124,17 @@ task("report-production-size", () => {
         .on("end", () => {
           let size = parseInt(s.size, 10);
 
-          if (key === "CSS") size -= results.SVG.size + results.PNG.size;
-          if (key === "HTML")
-            size -= results.CSS.size + results.SVG.size + results.PNG.size;
-
+          total += size;
           results[key] = {
             size,
           };
+
+          if (index === array.length - 1) {
+            results["TOTAL"] = {
+              size: total,
+            };
+          }
+
           done();
         });
     };
