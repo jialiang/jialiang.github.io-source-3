@@ -5,6 +5,7 @@
 # <span>My Personal</span><br aria-hidden="true" /><span>Website</span>
 
 <small>*Written on 30 Nov 2020*</small>
+<small>*Updated 21 Jan 2021*</small>
 
 [Github repository](https://github.com/jialiang/jialiang.github.io-source-3)
 
@@ -30,20 +31,20 @@ JavaScript libraries powered by [NodeJS](https://nodejs.org/en/) are used to com
 
 ## Performance
 
-The entire website inclusive of all resources for my 1080p screen has a transfer size of only 221kB, of which:
+The entire website inclusive of all resources for my 1080p screen has a transfer size of only 247kB, of which:
 
-Type   | Approx. Size
-:---   | ---:
-WEBP   | 70kB (32%)
-SVG    | 83kB (38%)
-PNG    | 34kB (15%)
-WOFF2  | 19kB (9%)
-CSS    | 8kB (4%)
-HTML   | 7kB (3%)
-JS     | Less than 1kB
+Type       | Approx. Size
+:---       | ---:
+WEBP       | 132kB (53%)
+SVG        | 45kB (18%)
+WOFF       | 18kB (7%)
+PNG        | 34kB (14%)
+CSS        | 7kB (3%)
+HTML + JS  | 12kB (4%)
 
 For comparison, the [Google homepage](https://jialiang.github.io/images/google-speed.jpg) trasfers a total of 458kB on the same device.
 
+The size of the initial page load can be as low as 126kB with the implementation of lazy loading for images.
 
 During rendering performance testing, the website is able to both play animations & scroll smoothly on a 2016 Asus Zenfone 3 & 2015 Macbook Pro.
 The test is done in Firefox & Chrome for the former and Safari for the latter.
@@ -61,7 +62,7 @@ This website is compatible with:
 - Internet Explorer 11
 
 It also functions fine with JavaScript disabled.
-The only line of JavaScript used is just to make the intro animation more efficient.
+The only line of JavaScript used is just to make page switching more efficient.
 
 This website supports screens of:
 
@@ -78,7 +79,6 @@ This website has the following accessibility features:
 - Has text contrast ratio of 4.5:1 and above.
 - Support text zoom level up to 200%.
 - [Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont) font for low-vision readers.
-- Valid HTML & CSS verified by the [W3C Markup Validation Service](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjialiang.github.io%2F).
 
 This website has a [Lighthouse score of 100/100](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fjialiang.github.io%2F) in the Accessibility category.
 
