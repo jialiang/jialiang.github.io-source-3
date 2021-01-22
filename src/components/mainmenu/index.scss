@@ -108,7 +108,7 @@ section.mainmenu {
   }
 
   .nav {
-    font-size: 5.5vmin;
+    font-size: 5vmin;
     position: absolute;
     z-index: 1;
     top: 57.5vh;
@@ -116,8 +116,12 @@ section.mainmenu {
     width: 100%;
     text-align: center;
 
-    @media (min-width: 600px), (min-height: 600px) {
-      font-size: 33px;
+    @media (max-aspect-ratio: 1 / 1) and (max-width: 700px) {
+      font-size: 35px;
+    }
+
+    @media (max-aspect-ratio: 1 / 1) and (max-width: 540px) {
+      font-size: 6.5vmin;
     }
 
     span {
