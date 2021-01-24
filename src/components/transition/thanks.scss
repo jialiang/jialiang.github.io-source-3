@@ -37,9 +37,7 @@
   will-change: transform;
 
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    opacity: 0.5;
-    background: inline-svg("radial-solid") 0 0/100% auto no-repeat,
-      radial-gradient(gold, rgba(218, 165, 32, 0.5));
+    background: radial-gradient(gold, rgba(218, 165, 32, 0.5));
   }
 
   @media (max-aspect-ratio: 1 / 1) {

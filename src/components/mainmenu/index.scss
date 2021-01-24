@@ -10,6 +10,10 @@ section.mainmenu {
     background: black;
 
     isolation: isolate;
+
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      background: rgba(0, 0, 0, 0);
+    }
   }
 
   .room {
