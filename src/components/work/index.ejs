@@ -1,3 +1,32 @@
+<% const generateSource = (n) => (`
+<source
+  type="image/webp"
+  srcset="
+    images/project-${n}-360.webp   360w,
+    images/project-${n}-520.webp   520w,
+    images/project-${n}-780.webp   780w,
+    images/project-${n}-1080.webp 1080w
+  "
+  sizes="
+      (max-width: 34.425rem) calc(100vw - 2.7rem),
+      31.725rem
+      "
+/>
+<source
+  type="image/jpeg"
+  srcset="
+    images/project-${n}-360.jpg   360w,
+    images/project-${n}-520.jpg   520w,
+    images/project-${n}-780.jpg   780w,
+    images/project-${n}-1080.jpg 1080w
+  "
+  sizes="
+      (max-width: 34.425rem) calc(100vw - 2.7rem),
+      31.725rem
+      "
+/>
+`) %>
+
 <section id="work" role="dialog" tabindex="0">
   <div class="text-container">
     <h1>
@@ -16,15 +45,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-1-360.webp 360w,
-              images/project-1-520.webp 520w,
-              images/project-1-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(1) %>
           <img
             src="images/project-1-780.jpg"
             alt="Screenshot of this website"
@@ -46,15 +67,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-5-360.webp 360w,
-              images/project-5-520.webp 520w,
-              images/project-5-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(5) %>
           <img
             src="images/project-5-780.jpg"
             alt="Shit Compressor cover image"
@@ -76,15 +89,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-3-360.webp 360w,
-              images/project-3-520.webp 520w,
-              images/project-3-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(3) %>
           <img
             src="images/project-3-780.jpg"
             alt="Space Gems cover image"
@@ -106,15 +111,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-6-360.webp 360w,
-              images/project-6-520.webp 520w,
-              images/project-6-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(6) %>
           <img
             src="images/project-6-780.jpg"
             alt="Yu-Gi-Oh OCG Secret Rare Effect with CSS cover image"
@@ -136,15 +133,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-4-360.webp 360w,
-              images/project-4-520.webp 520w,
-              images/project-4-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(4) %>
           <img
             src="images/project-4-780.jpg"
             alt="Screenshot of Pure CSS Matrix Digital Rain project"
@@ -166,15 +155,7 @@
           height="285"
         ></svg>
         <picture>
-          <source
-            type="image/webp"
-            srcset="
-              images/project-2-360.webp 360w,
-              images/project-2-520.webp 520w,
-              images/project-2-780.webp 780w
-            "
-            sizes="(max-width: 34.425em) calc(100vw - 2.7em), 31.525em"
-          />
+          <%- generateSource(2) %>
           <img
             src="images/project-2-780.jpg"
             alt="Pieretta in WebGL project cover image"
