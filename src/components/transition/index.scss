@@ -38,23 +38,18 @@ section:target {
       animation-play-state: paused;
     }
 
-    .leaf {
-      visibility: hidden;
+    .leaf,
+    .glow,
+    .paper,
+    .dust,
+    .color {
+      opacity: 0 !important;
     }
 
     .logo,
     .nav a {
-      visibility: hidden;
       transition: none;
       opacity: 0;
-    }
-
-    .intro-0,
-    .intro-0 .inner,
-    .intro-1,
-    .intro-1 .circle,
-    .intro-2 .reveal {
-      visibility: hidden;
     }
   }
 

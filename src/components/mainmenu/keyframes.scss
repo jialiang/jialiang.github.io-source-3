@@ -3,7 +3,7 @@
     opacity: 1;
   }
   50% {
-    opacity: 0.9;
+    opacity: 0.75;
   }
   100% {
     opacity: 1;
@@ -48,11 +48,11 @@
   }
 }
 
-.leaf:nth-child(1) {
-  top: -5vh;
-  left: 65.8vmin;
-  animation: 3.71s leaf-fall-1 4.83s linear infinite;
-}
+// .leaf:nth-child(1) {
+//   top: -5vh;
+//   left: 65.8vmin;
+//   animation: 3.71s leaf-fall-1 4.83s linear infinite;
+// }
 
 // @keyframes leaf-fall-1 {
 //   0% {

@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 1);
   pointer-events: none;
   background: radial-gradient(#eee, snow 25%, saddlebrown);
 
@@ -87,7 +87,7 @@
 
 #about:target {
   ~ .mainmenu .about-filter {
-    transition: 0.29s transform;
+    transition: 0.29s transform 0.05s;
     transform: scale3d(1, 1, 1);
   }
 
