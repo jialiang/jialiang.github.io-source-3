@@ -69,6 +69,12 @@
     height: 350px;
     transform: rotate3d(0, 0, 1, 24deg) scale3d(0, 0, 1);
     background: inline-svg("floral", black, black) 0 100%/350px auto no-repeat;
+
+    @media (max-width: 350px), (max-height: 350px) {
+      width: 100vmin;
+      height: 100vmin;
+      background-size: 100vmin auto;
+    }
   }
 
   .flower-2 {

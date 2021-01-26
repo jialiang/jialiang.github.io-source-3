@@ -35,6 +35,11 @@
     transform: scale3d(0, 0, 1);
     transform-origin: bottom left;
     background: inline-svg("fish") 0 0 / auto 100% no-repeat;
+
+    @media (max-width: 350px), (max-height: 350px) {
+      width: 100vmin;
+      height: 100vmin;
+    }
   }
 
   .fish-1 {

@@ -43,11 +43,12 @@ section:target {
     .paper,
     .dust,
     .color {
-      opacity: 0 !important;
+      visibility: hidden;
     }
 
     .logo,
     .nav a {
+      visibility: hidden;
       transition: none;
       opacity: 0;
     }
