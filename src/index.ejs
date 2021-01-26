@@ -53,6 +53,7 @@
       <%- include("components/transition/index") %>
       <!--  -->
       <svg
+        focusable="false"
         xmlns="http://www.w3.org/2000/svg"
         class="cover"
         viewbox="0 0 1706.667 960"
@@ -73,5 +74,87 @@
         >BACK</a
       >
     </div>
+    <script>
+      var prevHash = null;
+      var sections = document.querySelectorAll("section");
+
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].addEventListener(
+          "animationstart",
+          function (e) {
+            var self = this;
+
+            setTimeout(function () {
+              if (prevHash) {
+                var a = self.querySelector("a[href='" + prevHash + "']");
+                prevHash = null;
+                if (a) return a.focus();
+              }
+              self.focus();
+            }, 200);
+          },
+          { passive: true }
+        );
+      }
+
+      var backs = document.querySelectorAll(".back");
+
+      for (var i = 0; i < backs.length; i++) {
+        backs[i].addEventListener(
+          "click",
+          function () {
+            var href = this.getAttribute("href");
+            var curHash = window.location.hash;
+
+            if (href === "#") {
+              return setTimeout(function () {
+                document
+                  .querySelector(".mainmenu")
+                  .querySelector("a[href='" + curHash + "']")
+                  .focus();
+              }, 200);
+            }
+
+            prevHash = curHash;
+          },
+          { passive: true }
+        );
+      }
+
+      var a = document.querySelectorAll(".text-container a");
+      var lastActive = null;
+
+      for (var i = 0; i < a.length; i++) {
+        a[i].addEventListener(
+          "mousedown",
+          function () {
+            lastActive = this;
+          },
+          { passive: true }
+        );
+        a[i].addEventListener(
+          "touchdown",
+          function () {
+            lastActive = this;
+          },
+          { passive: true }
+        );
+        a[i].addEventListener(
+          "focus",
+          function (e) {
+            if (this === lastActive) return;
+
+            var section = document.querySelector(window.location.hash);
+            var scrollTop =
+              this.offsetTop - window.innerHeight * 0.5 + this.clientHeight / 2;
+
+            requestAnimationFrame(function () {
+              section.scrollTop = scrollTop;
+            });
+          },
+          { passive: true }
+        );
+      }
+    </script>
   </body>
 </html>
