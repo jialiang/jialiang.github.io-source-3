@@ -1,5 +1,5 @@
 <!-- prettier-ignore -->
-<section id="website" class="article" role="dialog" tabindex="0">
+<section id="!website" class="website article" role="dialog" tabindex="0">
   <div class="text-container">
     <%- md(`
 # <span>My Personal</span><br aria-hidden="true" /><span>Website</span>
@@ -62,13 +62,17 @@ This website is compatible with:
 - Safari
 - Internet Explorer 11
 
-It also functions fine with JavaScript disabled. This website only contains a couple of lines of JavaScript code to make it function better for keyboard-only users.
+It also functions fine with JavaScript disabled. This website only contains JavaScript code to make it function better for keyboard-only users. For example,
+
+- Ensuring focused links are in view and not blocked by fixed position elements.
+- Ensuring the parent container is focused when navigating into a new section.
+- Remembering the last focused link of a page so that users can continue where they left off when going back.
 
 This website supports screens of:
 
-- Size as small as [240 × 320](https://en.wikipedia.org/wiki/Graphics_display_resolution#320_%C3%97_240_(QVGA)).
-- Aspect-ratio as wide as [21:9](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones).
-- Aspect-ratio as tall as [9:21](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones).
+- Size as small as [240 × 320](https://en.wikipedia.org/wiki/Graphics_display_resolution#320_%C3%97_240_(QVGA)). E.g. Nokia 8110
+- Aspect-ratio as wide as [21:9](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones) and beyond.
+- Aspect-ratio as tall as [9:21](https://en.wikipedia.org/wiki/21:9_aspect_ratio#Smartphones). E.g. Sony Xperia 10
 
 ## Accessibility
 
@@ -77,7 +81,6 @@ This website has the following accessibility features:
 - Keyboard-friendly.
 - [NVDA screen reader](https://www.nvaccess.org/about-nvda/) friendly.
 - Has text contrast ratio of 4.5:1 and above.
-- Support text zoom level up to 200%.
 - [Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont) font for low-vision readers.
 
 This website has a [Lighthouse score of 100/100](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fjialiang.github.io%2F) in the Accessibility category.

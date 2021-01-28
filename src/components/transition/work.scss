@@ -58,7 +58,7 @@
   }
 }
 
-#work:target {
+.work:target {
   ~ .mainmenu .work-filter {
     transition: 0.29s transform 0.05s;
     transform: scale3d(1, 1, 1);

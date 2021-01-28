@@ -69,7 +69,7 @@
       >
       <a
         class="button back to-work"
-        href="#work"
+        href="#!work"
         title="Go back to Work section"
         >BACK</a
       >
@@ -144,7 +144,9 @@
           function (e) {
             if (this === lastActive) return;
 
-            var section = document.querySelector(window.location.hash);
+            var section = document.querySelector(
+              "." + window.location.hash.slice(2)
+            );
             var scrollTop =
               this.offsetTop - window.innerHeight * 0.5 + this.clientHeight / 2;
 

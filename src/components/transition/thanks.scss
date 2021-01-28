@@ -1,6 +1,6 @@
 @import "sass-inline-svg.scss";
 
-#thanks {
+.thanks {
   h1 {
     position: relative;
     z-index: 2;
@@ -45,7 +45,7 @@
   }
 }
 
-#thanks:target {
+.thanks:target {
   h1 {
     animation: 0.24s shake 0.8s both;
   }
