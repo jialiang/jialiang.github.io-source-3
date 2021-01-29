@@ -113,7 +113,10 @@
                 window.innerHeight * 0.5 +
                 this.clientHeight / 2;
 
-              section.scrollTop = scrollTop;
+              section.scrollTop = Math.min(
+                Math.max(scrollTop, 0),
+                section.scrollHeight
+              );
             },
             { passive: true }
           );
