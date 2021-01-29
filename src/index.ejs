@@ -53,6 +53,7 @@
       <%- include("components/transition/index") %>
       <!--  -->
       <svg
+        role="presentation"
         focusable="false"
         xmlns="http://www.w3.org/2000/svg"
         class="cover"
@@ -64,99 +65,60 @@
         ></path>
       </svg>
 
-      <a class="button back to-mainmenu" href="#" title="Go back to Main menu"
-        >BACK</a
+      <a
+        class="button back to-mainmenu"
+        href="#"
+        title="Go back to Main menu"
+        accesskey="b"
+        ><span>B</span>ACK</a
       >
       <a
         class="button back to-work"
         href="#!work"
         title="Go back to Work section"
-        >BACK</a
+        accesskey="a"
+        >B<span>A</span>CK</a
       >
     </div>
     <script>
-      var prevHash = null;
-      var sections = document.querySelectorAll("section");
+      window.onload = function () {
+        var a = document.querySelectorAll(".text-container a");
+        var lastActive = null;
 
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].addEventListener(
-          "animationstart",
-          function (e) {
-            var self = this;
+        for (var i = 0; i < a.length; i++) {
+          a[i].addEventListener(
+            "mousedown",
+            function () {
+              lastActive = this;
+            },
+            { passive: true }
+          );
+          a[i].addEventListener(
+            "touchdown",
+            function () {
+              lastActive = this;
+            },
+            { passive: true }
+          );
+          a[i].addEventListener(
+            "focus",
+            function (e) {
+              if (this === lastActive) return;
 
-            setTimeout(function () {
-              if (prevHash) {
-                var a = self.querySelector("a[href='" + prevHash + "']");
-                prevHash = null;
-                if (a) return a.focus();
-              }
-              self.focus();
-            }, 200);
-          },
-          { passive: true }
-        );
-      }
+              var section = document.querySelector(
+                "." + window.location.hash.slice(2) + " .scroll-container"
+              );
+              var scrollTop =
+                this.offsetTop -
+                window.innerHeight * 0.5 +
+                this.clientHeight / 2;
 
-      var backs = document.querySelectorAll(".back");
-
-      for (var i = 0; i < backs.length; i++) {
-        backs[i].addEventListener(
-          "click",
-          function () {
-            var href = this.getAttribute("href");
-            var curHash = window.location.hash;
-
-            if (href === "#") {
-              return setTimeout(function () {
-                document
-                  .querySelector(".mainmenu")
-                  .querySelector("a[href='" + curHash + "']")
-                  .focus();
-              }, 200);
-            }
-
-            prevHash = curHash;
-          },
-          { passive: true }
-        );
-      }
-
-      var a = document.querySelectorAll(".text-container a");
-      var lastActive = null;
-
-      for (var i = 0; i < a.length; i++) {
-        a[i].addEventListener(
-          "mousedown",
-          function () {
-            lastActive = this;
-          },
-          { passive: true }
-        );
-        a[i].addEventListener(
-          "touchdown",
-          function () {
-            lastActive = this;
-          },
-          { passive: true }
-        );
-        a[i].addEventListener(
-          "focus",
-          function (e) {
-            if (this === lastActive) return;
-
-            var section = document.querySelector(
-              "." + window.location.hash.slice(2)
-            );
-            var scrollTop =
-              this.offsetTop - window.innerHeight * 0.5 + this.clientHeight / 2;
-
-            requestAnimationFrame(function () {
               section.scrollTop = scrollTop;
-            });
-          },
-          { passive: true }
-        );
-      }
+            },
+            { passive: true }
+          );
+        }
+      };
     </script>
   </body>
 </html>

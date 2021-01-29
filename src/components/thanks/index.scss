@@ -3,6 +3,10 @@
 .thanks {
   background: inline-svg("radial") 50% 50%/100% auto;
 
+  @media (max-aspect-ratio: 1 / 1) {
+    background-size: auto 100%;
+  }
+
   .text-container {
     ul {
       margin: 2em 0;

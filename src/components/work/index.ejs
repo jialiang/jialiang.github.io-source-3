@@ -27,155 +27,159 @@
 />
 `) %>
 
-<section id="!work" class="work" role="dialog" tabindex="0">
-  <div class="text-container">
-    <h1>
-      <span>Work</span>
-    </h1>
-    <br />
-    <br />
-    <p>Some of my <span class="no-break">personal projects:</span></p>
-    <br />
-    <a href="#!website">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(1) %>
-          <img
-            src="images/project-1-780.jpg"
-            alt="Screenshot of this website"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">The Making of...This Website</div>
-          <div class="action" aria-hidden="true">Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="#!shit">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(5) %>
-          <img
-            src="images/project-5-780.jpg"
-            alt="Shit Compressor cover image"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">Shit Compressor</div>
-          <div class="action" aria-hidden="true">Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="#!gems">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(3) %>
-          <img
-            src="images/project-3-780.jpg"
-            alt="Space Gems cover image"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">Space Gems</div>
-          <div class="action" aria-hidden="true">Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="https://jialiang.github.io/ygo/" target="_blank">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(6) %>
-          <img
-            src="images/project-6-780.jpg"
-            alt="Yu-Gi-Oh OCG Secret Rare Effect with CSS cover image"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">Yu-Gi-Oh OCG Secret Rare Effect with CSS</div>
-          <div class="action" aria-hidden="true">See & Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="#!matrix">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(4) %>
-          <img
-            src="images/project-4-780.jpg"
-            alt="Screenshot of Pure CSS Matrix Digital Rain project"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">Pure CSS Digital Rain</div>
-          <div class="action" aria-hidden="true">Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="#!construction">
-      <figure>
-        <svg
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 507 285"
-          width="507"
-          height="285"
-        ></svg>
-        <picture>
-          <%- generateSource(2) %>
-          <img
-            src="images/project-2-780.jpg"
-            alt="Pieretta in WebGL project cover image"
-            loading="lazy"
-          />
-        </picture>
-        <figcaption>
-          <div class="title">Pieretta in WebGL</div>
-          <div class="action" aria-hidden="true">Read</div>
-        </figcaption>
-      </figure>
-    </a>
-    <p class="white no-break">Stay tuned.</p>
-    <br />
-    <p><span class="no-break">More stuff might</span> be added soon.</p>
+<section id="!work" class="work" tabindex="-1">
+  <div class="scroll-container" tabindex="0">
+    <div class="text-container">
+      <h1>
+        <span>Work</span>
+      </h1>
+      <br />
+      <br />
+      <p>Some of my <span class="no-break">personal projects:</span></p>
+      <br />
+      <a href="#!website" accesskey="t">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(1) %>
+            <img
+              src="images/project-1-780.jpg"
+              alt="Screenshot of this website"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title"><span>T</span>he Making of...This Website</div>
+            <div class="action" aria-hidden="true">Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="#!shit" accesskey="h">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(5) %>
+            <img
+              src="images/project-5-780.jpg"
+              alt="Screenshot of Shit Compressor"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title">S<span>h</span>it Compressor</div>
+            <div class="action" aria-hidden="true">Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="#!gems" accesskey="s">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(3) %>
+            <img
+              src="images/project-3-780.jpg"
+              alt="Space Gems cover image"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title"><span>S</span>pace Gems</div>
+            <div class="action" aria-hidden="true">Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://jialiang.github.io/ygo/" target="_blank" accesskey="y">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(6) %>
+            <img
+              src="images/project-6-780.jpg"
+              alt="Yu-Gi-Oh OCG Secret Rare Effect with CSS cover image"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title">
+              <span>Y</span>u-Gi-Oh OCG Secret Rare Effect with CSS
+            </div>
+            <div class="action" aria-hidden="true">See & Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="#!matrix" accesskey="p">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(4) %>
+            <img
+              src="images/project-4-780.jpg"
+              alt="Screenshot of Pure CSS Matrix Digital Rain project"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title"><span>P</span>ure CSS Digital Rain</div>
+            <div class="action" aria-hidden="true">Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <a href="#!construction" accesskey="i">
+        <figure>
+          <svg
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 507 285"
+            width="507"
+            height="285"
+          ></svg>
+          <picture>
+            <%- generateSource(2) %>
+            <img
+              src="images/project-2-780.jpg"
+              alt="Pieretta in WebGL project cover image"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>
+            <div class="title">P<span>i</span>eretta in WebGL</div>
+            <div class="action" aria-hidden="true">Read</div>
+          </figcaption>
+        </figure>
+      </a>
+      <p class="white no-break">Stay tuned.</p>
+      <br />
+      <p><span class="no-break">More stuff might</span> be added soon.</p>
+    </div>
   </div>
 </section>

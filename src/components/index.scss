@@ -35,24 +35,12 @@ body {
   > section {
     position: absolute;
     z-index: 2;
-    overflow-x: hidden;
-    overflow-y: auto;
     box-sizing: border-box;
     height: 100%;
     transform: translateZ(0);
-    border-left: 2px solid rgba(0, 0, 0, 0);
 
     content-visibility: auto;
     overscroll-behavior-y: contain;
-
-    &:focus {
-      box-sizing: border-box;
-      border-left-color: white;
-    }
-
-    @media (max-aspect-ratio: 1 / 1) {
-      border-left: none !important;
-    }
   }
 
   > div,
@@ -81,6 +69,10 @@ body {
     right: calc(50vw - 50vh / 2 * 3);
     bottom: 1vh;
     transform: rotate3d(0, 0, 1, -3deg);
+
+    span {
+      background: linear-gradient(#333, #333) 50% 100%/0.5em 2px no-repeat;
+    }
 
     @media (max-aspect-ratio: 3 / 2) {
       right: 2vh;
@@ -132,6 +124,17 @@ a {
     color: black;
     border-bottom: 2px solid #e4e063;
     background: linear-gradient(goldenrod, yellow);
+  }
+}
+
+.scroll-container {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+
+  &:focus {
+    border-left-color: rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -270,6 +273,10 @@ a {
           font-weight: bold;
           text-align: left;
           color: white;
+
+          span {
+            background: linear-gradient(#ddd, #ddd) 50% 95%/0.5em 1px no-repeat;
+          }
         }
 
         .action {
